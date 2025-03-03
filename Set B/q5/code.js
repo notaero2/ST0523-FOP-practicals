@@ -20,7 +20,15 @@ function longestSubstringWithoutRepeats(string) {
     let seen = ''; // rewrite such that seen is a string as students have not learned abotu sets
     for (let i = 0; i < string.length; i++) {
         const char = string[i];
-        const index = seen.indexOf(char);
+
+        let index = -1;
+        for (let i = 0; i < seen.length; i++) {
+            if (seen[i] === char) {
+                index = i;
+                break;
+            }
+        }
+
         if (index === -1) {
             seen += char;
             current++;
@@ -28,6 +36,7 @@ function longestSubstringWithoutRepeats(string) {
             seen = seen.slice(index + 1) + char;
             current = seen.length;
         }
+
         longest = Math.max(longest, current);
     }
     return longest;

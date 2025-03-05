@@ -24,6 +24,6 @@ module.exports = {
         },
     ],
     options: {
-        type: 'array',
+        type: 'JSON',
     },
 };

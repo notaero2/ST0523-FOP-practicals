@@ -1,4 +1,4 @@
-# Set C
+# Set A
 
 ## Topic Overview
 
@@ -9,6 +9,11 @@ This set of problems focuses on the use of:
 
 ## Instructions
 
-1. To run the program: `node run.js q#` e.g. `node run.js q1` to run q1.
-2. To add your own test cases simply add additional function calls at the bottom of the `code.js` and run the `code.js` e.g. `node ./q4/code.js`
+1. To run the program:
+    - Run `node run.js q#` replacing # with the question number.
+    - e.g. `node run.js q1` to run q1.
+2. To add your own test cases:
+    - Add additional function calls at the bottom of the `code.js`
+    - Run `node ./q#/code.js` replace # with the question number.
+    - e.g. `node ./q4/code.js`
 3. Do not modify the `testcases.js` of each question.

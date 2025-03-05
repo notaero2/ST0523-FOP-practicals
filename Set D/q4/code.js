@@ -47,24 +47,6 @@
  * - "pikachu(1)" --> already assigned, system adds (k), the smallest positive valid k is 2, becoming "pikachu(1)(2)"
  * Note: When a conflict is found, it does not modify any existing suffix but adds a new suffix.
  */
-function getFilenames(files) {
-    const map = {};
-    const result = [];
-    for (const file of files) {
-        if (map[file] === undefined) {
-            map[file] = 1;
-            result.push(file);
-        } else {
-            let k = map[file];
-            while (map[`${file}(${k})`] !== undefined) {
-                k++;
-            }
-            map[file] = k;
-            map[`${file}(${k})`] = 1;
-            result.push(`${file}(${k})`);
-        }
-    }
-    return result;
-}
+function getFilenames(files) {}
 
 module.exports = getFilenames;

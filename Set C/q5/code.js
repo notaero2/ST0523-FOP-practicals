@@ -44,36 +44,6 @@
  *      e r l e s
  * - Reading off row by row gives 'eedARBtVrolsiesuAoReerles'
  */
-function decodeMessage(message) {
-    const length = Math.sqrt(message.length);
-    const matrix = [];
-    for (let i = 0; i < length; i++) {
-        for (let j = 0; j < length; j++) {
-            if (!matrix[j]) {
-                matrix[j] = [];
-            }
-            matrix[i][j] = message[i * length + j];
-        }
-    }
-
-    // Rotate the matrix 90 degrees anti-clockwise
-    const rotatedMatrix = [];
-    for (let i = 0; i < length; i++) {
-        for (let j = 0; j < length; j++) {
-            if (!rotatedMatrix[j]) {
-                rotatedMatrix[j] = [];
-            }
-            rotatedMatrix[i][j] = matrix[j][length - i - 1];
-        }
-    }
-
-    // Read off row by row
-    let decodedMessage = '';
-    for (let i = 0; i < length; i++) {
-        decodedMessage += rotatedMatrix[i].join('');
-    }
-
-    return decodedMessage;
-}
+function decodeMessage(message) {}
 
 module.exports = decodeMessage;

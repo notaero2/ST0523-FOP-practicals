@@ -12,20 +12,6 @@
  * earliestCommonCharacter('abbbbba', 'bbba'); // b --> 1 + 0 = 1
  * earliestCommonCharacter('abc', 'def'); // -1
  */
-function earliestCommonCharacter(string1, string2) {
-    // use 2 for-loop instead
-    let result = string1.length + string2.length;
-    for (let i = 0; i < string1.length; i++) {
-        for (let j = 0; j < string2.length; j++) {
-            if (string1[i] === string2[j]) {
-                result = Math.min(i + j, result);
-            }
-        }
-    }
-    if (result === string1.length + string2.length) {
-        return -1;
-    }
-    return result;
-}
+function earliestCommonCharacter(string1, string2) {}
 
 module.exports = earliestCommonCharacter;

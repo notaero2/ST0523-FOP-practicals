@@ -42,26 +42,7 @@
  * - The third query is 'Japan 3', the third trip to Japan was in 2003
  *
  */
-function tripYear(trips, queries) {
-    const map = {};
-    for (const trip of trips) {
-        const [place, year] = trip.split(' ');
-        if (!map[place]) {
-            map[place] = [];
-        }
-        map[place].push(+year);
-    }
-    for (const place in map) {
-        map[place].sort((a, b) => a - b);
-    }
-
-    const result = [];
-    for (const query of queries) {
-        const [place, nth] = query.split(' ');
-        result.push(map[place][Number(nth) - 1]);
-    }
-    return result;
-}
+function tripYear(trips, queries) {}
 
 module.exports = tripYear;
 

@@ -17,8 +17,6 @@
  * In the third example, the slope of the line passing through (3, 3) and (-4, -25) is 4.
  *
  */
-function findSlope(x1, y1, x2, y2) {
-    return (y2 - y1) / (x2 - x1);
-}
+function findSlope(x1, y1, x2, y2) {}
 
 module.exports = findSlope;

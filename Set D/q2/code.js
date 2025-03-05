@@ -41,35 +41,6 @@
  * - The eighth command assigns a packet for South to Charlie.
  * - The ninth command returns the total number of packets assigned to Charlie, which is 1.
  */
-function deliveryAssignment(commands) {
-    const drivers = {};
-    const locations = {};
-    const result = [];
-    for (const command of commands) {
-        const [type, ...rest] = command.split(' ');
-        if (type === 'assign') {
-            const [driver, location] = rest;
-            if (!drivers[driver]) {
-                drivers[driver] = {};
-            }
-            if (!locations[location]) {
-                locations[location] = {};
-            }
-            drivers[driver][location] = (drivers[driver][location] || 0) + 1;
-            locations[location][driver] = (locations[location][driver] || 0) + 1;
-        } else if (type === 'queryDriver') {
-            const driver = rest[0];
-            result.push(Object.values(drivers[driver] || {}).reduce((a, b) => a + b, 0));
-        } else if (type === 'queryLocation') {
-            const location = rest[0];
-            result.push(Object.values(locations[location] || {}).reduce((a, b) => a + b, 0));
-        } else {
-            // type === 'query'
-            const [driver, location] = rest;
-            result.push((drivers[driver] && drivers[driver][location]) || 0);
-        }
-    }
-    return result;
-}
+function deliveryAssignment(commands) {}
 
 module.exports = deliveryAssignment;

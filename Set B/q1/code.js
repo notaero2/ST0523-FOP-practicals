@@ -23,16 +23,6 @@
  * fibonacci(7); // 8
  * fibonacci(10); // 34
  */
-function fibonacci(n) {
-    let a = 0;
-    let b = 1;
-    let temp;
-    for (let i = 1; i < n; i++) {
-        temp = a;
-        a = b;
-        b = temp + b;
-    }
-    return a;
-}
+function fibonacci(n) {}
 
 module.exports = fibonacci;

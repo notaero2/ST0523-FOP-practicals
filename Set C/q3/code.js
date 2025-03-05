@@ -19,23 +19,6 @@
  * The averages of these subarrays are 2, 5, 7.5.
  *
  */
-function zoomOut(array, zoomLevel) {
-    const result = [];
-    let sum = 0;
-    let count = 0;
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
-        count++;
-        if (count === zoomLevel) {
-            result.push(sum / zoomLevel);
-            sum = 0;
-            count = 0;
-        }
-    }
-    if (count > 0) {
-        result.push(sum / count);
-    }
-    return result;
-}
+function zoomOut(array, zoomLevel) {}
 
 module.exports = zoomOut;

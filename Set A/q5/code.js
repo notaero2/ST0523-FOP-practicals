@@ -5,8 +5,6 @@
  * Basic: Do it with if-else
  * Challenge: Do it only with AND, OR, and modulus operator. (Hint: Short circuiting)
  */
-function foobar(number) {
-    return (number % 15 === 0 && 'foobar') || (number % 3 === 0 && 'foo') || (number % 5 === 0 && 'bar') || number;
-}
+function foobar(number) {}
 
 module.exports = foobar;

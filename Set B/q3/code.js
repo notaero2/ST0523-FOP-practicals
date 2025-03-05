@@ -18,19 +18,6 @@
  * For the second example, there are no common prefix, so the length is 0.
  * For the third example, the longest common prefix is 'ab', which has a length of 2.
  */
-function longestCommonPrefix(string1, string2, string3, string4) {
-    // Write your code here
-    let i = 0;
-    const minLength = Math.min(string1.length, string2.length, string3.length, string4.length);
-    while (
-        i < minLength &&
-        string1.charAt(i) === string2.charAt(i) &&
-        string2.charAt(i) === string3.charAt(i) &&
-        string3.charAt(i) === string4.charAt(i)
-    ) {
-        i++;
-    }
-    return i;
-}
+function longestCommonPrefix(string1, string2, string3, string4) {}
 
 module.exports = longestCommonPrefix;

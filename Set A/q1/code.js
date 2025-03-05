@@ -15,8 +15,6 @@
  * In the third example, '1' + 2 = 3, the values are converted to numbers before adding
  * In the fourth example, 1 + '2' = 3, the values are converted to numbers before adding
  */
-function sumTwoValue(a, b) {
-    return +a + +b;
-}
+function sumTwoValue(a, b) {}
 
 module.exports = sumTwoValue;

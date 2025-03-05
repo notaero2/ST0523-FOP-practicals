@@ -37,14 +37,6 @@
  * - Given order:       ['A', 'B', 'C', 'D', 'D', ' ']
  * - We see that 1 overlap (Q4), hence 1 question was answered correctly.
  */
-function mcqError(answers) {
-    let correct = 0;
-    for (let i = 0; i < answers.length - 1; i++) {
-        if (answers[i] === answers[i + 1]) {
-            correct++;
-        }
-    }
-    return correct;
-}
+function mcqError(answers) {}
 
 module.exports = mcqError;

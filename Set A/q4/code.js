@@ -18,12 +18,6 @@
  * In the third example, the student has a GPA of 2.07 and has fulfilled 29 credits. They need a GPA of 3.5 for the remaining 220 - 29 = 91 credits to achieve a target GPA of 3.14.
  *
  */
-function toGetTargetGPA(gpa, creditsFulfilled, totalCredits, targetGPA) {
-    // Calculate the GPA needed for the remaining credits to be fulfilled to achieve the target GPA
-    const targetGPANeeded = (targetGPA * totalCredits - gpa * creditsFulfilled) / (totalCredits - creditsFulfilled);
-
-    // target GPA needs to be either 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4
-    return Math.ceil(targetGPANeeded * 2) / 2;
-}
+function toGetTargetGPA(gpa, creditsFulfilled, totalCredits, targetGPA) {}
 
 module.exports = toGetTargetGPA;

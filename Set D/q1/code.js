@@ -11,25 +11,6 @@
  *      // returns:  { 'Alice': ['ST0523', 'ST0501'], 'Bob': ['ST0523'], 'John': ['ST0501', 'ST2413'], 'Charlie': ['ST0501', 'ST2413'] }
  *
  */
-function reverseMapping(moduleToTutors) {
-    const tutorToModules = {};
-    for (const module in moduleToTutors) {
-        for (const tutor of moduleToTutors[module]) {
-            if (tutorToModules[tutor]) {
-                tutorToModules[tutor].push(module);
-            } else {
-                tutorToModules[tutor] = [module];
-            }
-        }
-    }
-    // sort keys
-    const sortedTutorToModules = {};
-    Object.keys(tutorToModules)
-        .sort()
-        .forEach((key) => {
-            sortedTutorToModules[key] = tutorToModules[key];
-        });
-    return sortedTutorToModules;
-}
+function reverseMapping(moduleToTutors) {}
 
 module.exports = reverseMapping;

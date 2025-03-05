@@ -15,16 +15,6 @@
  * pi(8);   // 3.017071817071818    => 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 - 1/15)
  * pi(10);  // 3.0418396189294032   => 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 - 1/15 + 1/17 - 1/19)
  */
-function pi(numberOfFractions) {
-    let estimatedPi = 0;
-    for (let i = 0; i < numberOfFractions; i++) {
-        // Alternate the signs: even index is positive, odd index is negative
-        const sign = i % 2 === 0 ? 1 : -1;
-        const denominator = 2 * i + 1; // Odd numbers: 1, 3, 5, 7, ...
-        estimatedPi += sign / denominator;
-    }
-    // Multiply by 4 to get the estimated value of pi
-    return 4 * estimatedPi;
-}
+function pi(numberOfFractions) {}
 
 module.exports = pi;

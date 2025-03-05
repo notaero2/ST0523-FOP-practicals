@@ -43,49 +43,6 @@
  * - The tenth command calculates programming - is + fun, which is 10 - 4 + 1 = 7, and 7 maps to the variable "bar"
  *
  */
-function evaluateCommands(commands) {
-    const variables = {};
-    const numberToVariable = {};
-    const result = [];
-    for (const command of commands) {
-        const [type, ...rest] = command.split(' ');
-        if (type === 'def') {
-            const [name, value] = rest;
-            variables[name] = Number(value);
-            numberToVariable[value] = name;
-        } else {
-            // type === 'calc'
-            let sum = 0;
-            let unknown = false;
-            for (let i = 0; i < rest.length; i += 2) {
-                const value = variables[rest[i]];
-                if (value === undefined) {
-                    unknown = true;
-                    break;
-                }
-
-                if (i === 0) {
-                    sum = value;
-                } else {
-                    const operator = rest[i - 1];
-                    if (operator === '+') {
-                        sum += value;
-                    } else {
-                        sum -= value;
-                    }
-                }
-            }
-
-            if (unknown) {
-                result.push('invalid');
-            } else if (numberToVariable[sum] === undefined) {
-                result.push('unknown');
-            } else {
-                result.push(numberToVariable[sum]);
-            }
-        }
-    }
-    return result;
-}
+function evaluateCommands(commands) {}
 
 module.exports = evaluateCommands;

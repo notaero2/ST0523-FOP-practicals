@@ -18,39 +18,6 @@
  * checkArray([5, 4, 4, 3, 2]); // 'Non-ascending'
  * checkArray([1, 2, 4, 3, 5]); // 'Unsorted'
  */
-function checkArray(array) {
-    let asc = true;
-    let nonDesc = true;
-    let desc = true;
-    let nonAsc = true;
-    let constant = true;
-    for (let i = 1; i < array.length; i++) {
-        if (array[i] > array[i - 1]) {
-            desc = false;
-            nonAsc = false;
-            constant = false;
-        } else if (array[i] < array[i - 1]) {
-            asc = false;
-            nonDesc = false;
-            constant = false;
-        } else {
-            asc = false;
-            desc = false;
-        }
-    }
-    if (constant) {
-        return 'Constant';
-    } else if (asc) {
-        return 'Ascending';
-    } else if (desc) {
-        return 'Descending';
-    } else if (nonDesc) {
-        return 'Non-descending';
-    } else if (nonAsc) {
-        return 'Non-ascending';
-    } else {
-        return 'Unsorted';
-    }
-}
+function checkArray(array) {}
 
 module.exports = checkArray;

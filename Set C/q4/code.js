@@ -16,18 +16,6 @@
  * detectCycle([2, 4, 1, 6, 3, 9, 5]); // false
  * detectCycle([2, 4, 1, 6, 3, 0, 5]); // true
  */
-function detectCycle(jumps) {
-    // Student has not learned Set
-    let current = 0;
-    while (current < jumps.length) {
-        if (jumps[current] === -1) {
-            return true;
-        }
-        const temp = current;
-        current = jumps[current];
-        jumps[temp] = -1;
-    }
-    return false;
-}
+function detectCycle(jumps) {}
 
 module.exports = detectCycle;

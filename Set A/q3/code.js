@@ -24,8 +24,6 @@
  *
  *
  */
-function canSitRollercoaster(height, age, withParent, hasHeartCondition) {
-    return height >= 120 && (age > 16 || withParent) && !hasHeartCondition;
-}
+function canSitRollercoaster(height, age, withParent, hasHeartCondition) {}
 
 module.exports = canSitRollercoaster;

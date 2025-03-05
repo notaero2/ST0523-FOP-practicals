@@ -18,3 +18,8 @@
 function pi(numberOfFractions) {}
 
 module.exports = pi;
+
+// Your own test cases
+// e.g.;
+
+// console.log(pi(6));

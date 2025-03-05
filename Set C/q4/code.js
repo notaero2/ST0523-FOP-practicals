@@ -19,3 +19,8 @@
 function detectCycle(jumps) {}
 
 module.exports = detectCycle;
+
+// Your own test cases
+// e.g.;
+
+// console.log(detectCycle([1, 2, 0])); // true

@@ -14,3 +14,8 @@
 function reverseMapping(moduleToTutors) {}
 
 module.exports = reverseMapping;
+
+// Your own test cases
+// e.g.;
+
+// console.log(reverseMapping({ 'ST0523': ['Alice', 'Bob'], 'ST0501': ['Alice', 'John', 'Charlie'], 'ST2413': ['John', 'Charlie'] }));

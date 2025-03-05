@@ -17,3 +17,8 @@
 function longestSubstringWithoutRepeats(string) {}
 
 module.exports = longestSubstringWithoutRepeats;
+
+// Your own test cases
+// e.g.;
+
+// console.log(longestSubstringWithoutRepeats('abcabcbb'));

@@ -44,3 +44,12 @@
 function deliveryAssignment(commands) {}
 
 module.exports = deliveryAssignment;
+
+// Your own test cases
+// e.g.;
+
+// console.log(deliveryAssignment([
+//   'assign Alice North',
+//   'assign Bob South',
+//   'query Alice North'
+// ]));

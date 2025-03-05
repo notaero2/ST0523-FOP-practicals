@@ -20,3 +20,8 @@
 function findSlope(x1, y1, x2, y2) {}
 
 module.exports = findSlope;
+
+// Your own test cases
+// e.g.;
+
+// console.log(findSlope(1, 1, 2, 2));

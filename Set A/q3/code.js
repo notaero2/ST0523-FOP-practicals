@@ -27,3 +27,8 @@
 function canSitRollercoaster(height, age, withParent, hasHeartCondition) {}
 
 module.exports = canSitRollercoaster;
+
+// Your own test cases
+// e.g.;
+
+// console.log(canSitRollercoaster(130, 15, true, false)); // false

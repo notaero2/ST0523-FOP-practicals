@@ -47,3 +47,8 @@
 function decodeMessage(message) {}
 
 module.exports = decodeMessage;
+
+// Your own test cases
+// e.g.;
+
+// console.log(decodeMessage('RSTEEOTCP'));

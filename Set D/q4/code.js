@@ -50,3 +50,8 @@
 function getFilenames(files) {}
 
 module.exports = getFilenames;
+
+// Your own test cases
+// e.g.;
+
+// console.log(tripYear(['Paris 2019', 'Paris 2020', 'London 2021'], ['Paris 1', 'Paris 2', 'London 1']));

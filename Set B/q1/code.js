@@ -26,3 +26,8 @@
 function fibonacci(n) {}
 
 module.exports = fibonacci;
+
+// Your own test cases
+// e.g.;
+
+// console.log(fibonacci(10));

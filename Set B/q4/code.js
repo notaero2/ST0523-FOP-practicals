@@ -15,3 +15,8 @@
 function earliestCommonCharacter(string1, string2) {}
 
 module.exports = earliestCommonCharacter;
+
+// Your own test cases
+// e.g.;
+
+// console.log(earliestCommonCharacter('hello', 'world'));

@@ -22,3 +22,8 @@
 function zoomOut(array, zoomLevel) {}
 
 module.exports = zoomOut;
+
+// Your own test cases
+// e.g.;
+
+// console.log(zoomOut([1, 2, 3, 4, 5, 6, 7, 8], 2));

@@ -21,3 +21,8 @@
 function checkArray(array) {}
 
 module.exports = checkArray;
+
+// Your own test cases
+// e.g.;
+
+// console.log(checkArray([1, 2, 3, 4, 5]));

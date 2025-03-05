@@ -18,3 +18,8 @@
 function sumTwoValue(a, b) {}
 
 module.exports = sumTwoValue;
+
+// Your own test cases
+// e.g.;
+
+// console.log(sumTwoValue(1, 2));

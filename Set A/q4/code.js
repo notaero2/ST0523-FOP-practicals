@@ -21,3 +21,8 @@
 function toGetTargetGPA(gpa, creditsFulfilled, totalCredits, targetGPA) {}
 
 module.exports = toGetTargetGPA;
+
+// Your own test cases
+// e.g.;
+
+// console.log(toGetTargetGPA(0, 0, 120, 3));

@@ -40,3 +40,8 @@
 function mcqError(answers) {}
 
 module.exports = mcqError;
+
+// Your own test cases
+// e.g.;
+
+// console.log(mcqError(['A', 'A', 'A', 'A', ' ']));

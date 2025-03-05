@@ -8,3 +8,8 @@
 function foobar(number) {}
 
 module.exports = foobar;
+
+// Your own test cases
+// e.g.;
+
+// console.log(foobar(3));

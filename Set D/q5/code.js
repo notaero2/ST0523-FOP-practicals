@@ -46,3 +46,8 @@
 function evaluateCommands(commands) {}
 
 module.exports = evaluateCommands;
+
+// Your own test cases
+// e.g.;
+
+// console.log(evaluateCommands(['def foo 3', 'calc foo + bar', 'def bar 7', 'def programming 10', 'calc foo + bar']));

@@ -1,6 +1,7 @@
 # FOP Practical Sets
 
 Quick start without downloading:
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/SP-DIT/ST0523-FOP-practicals)
 
 ## Table of Content

@@ -5,12 +5,12 @@
 This set of problems focuses on the use of:
 
 -   if-else
--   for-loop
 
 While making use of previous topics such as
 
 -   variables
 -   data types
+-   functions
 
 ## Instructions
 

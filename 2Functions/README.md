@@ -4,6 +4,10 @@
 
 This set of problems focuses on the use of:
 
+-   Functions
+
+While making use of previous topics such as
+
 -   variables
 -   data types
 

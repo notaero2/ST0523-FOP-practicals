@@ -6,15 +6,17 @@ Quick start without downloading:
 
 ## Table of Content
 
-1. Set A - Variables and Data Types
-2. Set B - If-else and For-loop
-3. Set C - Arrays
-4. Set D - Objects
+1. Set 1 - Operators
+2. Set 2 - Functions
+3. Set 3 - Selections (If-else)
+4. Set 4 - Loops
+5. Set 5 - Arrays
+6. Set 6 - Objects
 
 ## Instructions
 
 1. Change directory to the relevant set
-    - e.g. `cd SetA`
+    - e.g. `cd 1Operators`
 2. Solve the problems by modifying the `code.js` in each question folder.
 3. To run the program:
     - Run `node run.js q#` replacing # with the question number.

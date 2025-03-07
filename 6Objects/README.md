@@ -10,6 +10,7 @@ While making use of previous topics such as
 
 -   variables
 -   data types
+-   functions
 -   if-else
 -   for-loop
 -   arrays

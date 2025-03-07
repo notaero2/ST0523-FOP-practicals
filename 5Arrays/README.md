@@ -1,4 +1,4 @@
-# Set C
+# 5. Arrays
 
 ## Topic Overview
 

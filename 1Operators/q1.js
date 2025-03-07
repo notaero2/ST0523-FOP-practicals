@@ -8,7 +8,11 @@
 
 // 1 - Use either 1 of + - * /
 
+1 + 2;
+
 // 2 - Use either 2 of + - * /
+
+1 + 2 - 3;
 
 /**
  * 3 - Use more operators, add some brackets too

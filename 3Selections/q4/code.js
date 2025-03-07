@@ -51,18 +51,7 @@
  *  south -> east
  *  east -> north
  */
-function canProceed(currentPosition, targetPosition, incomingVehiclePosition) {
-    if (
-        (currentPosition === 'north' && (targetPosition === 'west' || incomingVehiclePosition === 'west')) ||
-        (currentPosition === 'west' && (targetPosition === 'south' || incomingVehiclePosition === 'south')) ||
-        (currentPosition === 'south' && (targetPosition === 'east' || incomingVehiclePosition === 'east')) ||
-        (currentPosition === 'east' && (targetPosition === 'north' || incomingVehiclePosition === 'north'))
-    ) {
-        return 'Stop';
-    } else {
-        return 'Proceed';
-    }
-}
+function canProceed(currentPosition, targetPosition, incomingVehiclePosition) {}
 
 module.exports = canProceed;
 

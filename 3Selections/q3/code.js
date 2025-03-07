@@ -23,24 +23,7 @@
  * chickens(10, 11); // 'You have a surplus of 1 chicken'
  *
  */
-function chickens(required, available) {
-    const diff = required - available;
-    if (diff === 0) {
-        return 'Enough';
-    } else if (diff > 0) {
-        if (diff === 1) {
-            return 'You lack 1 chicken';
-        } else {
-            return 'You lack ' + diff + ' chickens';
-        }
-    } else {
-        if (diff === -1) {
-            return 'You have a surplus of 1 chicken';
-        } else {
-            return 'You have a surplus of ' + -1 * diff + ' chickens';
-        }
-    }
-}
+function chickens(required, available) {}
 
 module.exports = chickens;
 

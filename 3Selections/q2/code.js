@@ -14,17 +14,7 @@
  *
  * Given a coordinate, determine which quadrant it is in.
  */
-function whichQuadrant(x, y) {
-    if (x > 0 && y > 0) {
-        return 1;
-    } else if (x < 0 && y > 0) {
-        return 2;
-    } else if (x < 0 && y < 0) {
-        return 3;
-    } else if (x > 0 && y < 0) {
-        return 4;
-    }
-}
+function whichQuadrant(x, y) {}
 
 module.exports = whichQuadrant;
 

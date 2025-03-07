@@ -21,15 +21,7 @@
  * dateFormat(1, 1, 2025); // 'Either'
  *
  */
-function dateFormat(AA, BB, CCCC) {
-    if (AA <= 12 && BB <= 12) {
-        return 'Either';
-    } else if (AA <= 12) {
-        return 'US';
-    } else {
-        return 'EU';
-    }
-}
+function dateFormat(AA, BB, CCCC) {}
 
 module.exports = dateFormat;
 

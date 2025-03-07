@@ -1,34 +1,27 @@
 /**
- * @param {number} height - The height of the person in cm
- * @param {number} age - The age of the person in years
- * @param {boolean} withParent - Whether the person is with a parent or guardian
- * @param {boolean} hasHeartCondition - Whether the person has a heart condition
- * @returns {boolean} - Whether the person can sit on the rollercoaster
- *
- * The requirements are:
- * - The person must be at least 120cm tall AND
- * - The person must be at least 16 years old, or be with a parent or guardian AND
- * - The person must not have a heart condition AND
+ * Finds the slope of a line given two points on the line
+ * @param {number} x1 - x-coordinate of the first point
+ * @param {number} y1 - y-coordinate of the first point
+ * @param {number} x2 - x-coordinate of the second point
+ * @param {number} y2 - y-coordinate of the second point
+ * @returns {number} - The slope of the line
  *
  * @example
- * canSitRollercoaster(130, 15, true, false); // false
- * canSitRollercoaster(130, 15, false, false); // true
- * canSitRollercoaster(130, 15, true, true); // false
- * canSitRollercoaster(100, 16, false, false); // false
+ * findSlope(1, 1, 2, 2); // 1
+ * findSlope(2, 2, 4, 8); // 3
+ * findSlope(3, 3, -4, -25); // 4
  *
- * @explaination
- * The person is not allowed to sit on the rollercoaster as the age is less than 16.
- * The person is allowed to sit on the rollercoaster even though the age is less than 16 as they are with their parent.
- * The person is not allowed to sit on the rollercoaster as the person has a heart condition.
- * The person is not allowed to sit on the rollercoaster as the person is not tall enough.
- *
+ * @explanation
+ * In the first example, the slope of the line passing through (1, 1) and (2, 2) is 1.
+ * In the second example, the slope of the line passing through (2, 2) and (4, 8) is 3.
+ * In the third example, the slope of the line passing through (3, 3) and (-4, -25) is 4.
  *
  */
-function canSitRollercoaster(height, age, withParent, hasHeartCondition) {}
+function findSlope(x1, y1, x2, y2) {}
 
-module.exports = canSitRollercoaster;
+module.exports = findSlope;
 
 // Your own test cases
 // e.g.;
 
-// console.log(canSitRollercoaster(130, 15, true, false)); // false
+// console.log(findSlope(1, 1, 2, 2));

@@ -2,33 +2,17 @@ module.exports = {
     testcases: [
         {
             inputs: [
-                [0, 0, 120, 0],
-                [0, 0, 120, 4],
-                [0, 0, 120, 3],
-                [0, 0, 120, 3.5],
-                [0, 0, 120, 2.5],
+                [160, 17, false, false],
+                [160, 17, true, false],
+                [160, 17, false, true],
+                [160, 17, true, true],
+                [100, 17, false, false],
+                [160, 12, false, false],
+                [160, 12, true, false],
+                [160, 12, false, true],
+                [160, 12, true, true],
             ],
-            expected: [0, 4, 3, 3.5, 2.5],
-        },
-        {
-            inputs: [
-                [3, 14, 120, 3],
-                [2, 49, 240, 3.5],
-                [3, 11, 120, 3.5],
-                [1, 92, 320, 2],
-                [0, 56, 240, 3],
-                [3, 90, 120, 3],
-            ],
-            expected: [3, 4, 4, 2.5, 4, 3],
-        },
-        {
-            inputs: [
-                [0, 5, 120, 3.75],
-                [1.1, 10, 240, 3.8],
-                [2.07, 29, 220, 3.14],
-                [1.25, 60, 320, 2.6],
-            ],
-            expected: [4, 4, 3.5, 3],
+            expected: [true, true, false, false, false, false, true, false, false],
         },
     ],
 };

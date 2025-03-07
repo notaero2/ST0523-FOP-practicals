@@ -21,3 +21,8 @@
 function longestCommonPrefix(string1, string2, string3, string4) {}
 
 module.exports = longestCommonPrefix;
+
+// Your own test cases
+// e.g.;
+
+// console.log(longestCommonPrefix('hello', 'world', 'hello', 'world'));

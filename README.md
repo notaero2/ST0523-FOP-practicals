@@ -9,6 +9,8 @@ Quick start without downloading:
 1. NodeJs - https://nodejs.org/en/download - Download latest LTS (Long Term Support)
 2. VSCode - https://code.visualstudio.com/download
 3. Git - https://git-scm.com/downloads - _Note: It's `git` not `GitHub Desktop`_
+    - Set your username: `git config --global user.name "MY_NAME"`
+    - Set your email address: `git config --global user.email "MY_NAME@example.com"`
 
 ## Setting up
 

@@ -1,8 +1,7 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
-function extractGitCommits(repoPath, outputFormat = 'json') {
-    process.chdir(repoPath);
+function extractGitCommits() {
     let skip = 0;
     const commits = [];
     const commitPattern = /Auto commit\|cnx:(\d+)\|\+(\d+)-(\d+)\n\s+\n([\s\S]+)/m;
@@ -33,11 +32,9 @@ function extractGitCommits(repoPath, outputFormat = 'json') {
     }
 
     commits.sort((a, b) => new Date(a.date) - new Date(b.date));
-    fs.writeFileSync('.commits.json', JSON.stringify(commits, null, 4));
+    fs.writeFileSync('./visualizer/.commits.json', JSON.stringify(commits, null, 4));
 
-    console.log(`Data saved as ${outputFormat}`);
+    console.log(`Data saved as JSON`);
 }
 
-// Example usage: extract from current repo
-const directory = process.cwd();
-extractGitCommits(directory, 'json');
+extractGitCommits();

@@ -1,5 +1,6 @@
 {
     "scripts": {
-        "watch": "node ./.vscode/watch.js"
+        "watch": "node ./.vscode/watch.js",
+        "extract-git-history": "node ./visualizer/extract-git-history.js"
     }
 }

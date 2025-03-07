@@ -2,14 +2,19 @@ module.exports = {
     testcases: [
         {
             inputs: [
-                ['aaab', 'aaac', 'aaad', 'aaae'],
-                ['abc', 'abcd', 'abcde', 'abcdef'],
-                ['abc', 'aef', 'acd', 'bdf'],
-                ['abc', 'bdf', 'aef', 'acd'],
-                ['a', 'ab', 'abc', 'abcd'],
-                ['programming', 'programmes', 'programmers', 'progamer'],
+                [10, 10],
+                [10, 5],
+                [10, 9],
+                [10, 15],
+                [10, 11],
             ],
-            expected: [3, 3, 0, 0, 1, 4],
+            expected: [
+                'Enough',
+                'You lack 5 chickens',
+                'You lack 1 chicken',
+                'You have a surplus of 5 chickens',
+                'You have a surplus of 1 chicken',
+            ],
         },
     ],
 };

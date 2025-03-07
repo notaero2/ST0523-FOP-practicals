@@ -1,28 +1,50 @@
 /**
- * Find the longest common prefix of four strings.
+ * You are hosting an event where you are serving chicken.
+ * You have ordered a certain number of chickens for the event.
+ * You also have the number of attendees at the event.
  *
- * @param {string} string1 - The first string.
- * @param {string} string2 - The second string.
- * @param {string} string3 - The third string.
- * @param {string} string4 - The fourth string.
+ * You are to decide if you have enough, lack, or a surplus of chickens.
  *
- * @returns {number} - The length of the longest common prefix of the four strings.
+ * - If you have enough, return 'Enough'
+ * - If there's a lack, return "You lack x chicken[s]", where x is the number of chickens you lack.
+ * - If there's a surplus, return "You have a surplus of x chicken[s]", where x is the number of surplus chickens.
+ *
+ * Note: chicken is singular if x is 1, and plural otherwise.
+ *
+ * @param {number} required - The number of chickens required for the event.
+ * @param {number} available - The number of chickens available.
+ * @returns {string} - The result of the comparison.
  *
  * @example
- * longestCommonPrefix('hello', 'hello', 'hello', 'hello'); // 5
- * longestCommonPrefix('hello', 'world', 'hello', 'world'); // 0
- * longestCommonPrefix('abcde', 'abcef', 'abefg', 'abcge'); // 2
+ * chickens(10, 10); // 'Enough'
+ * chickens(10, 5); // 'You lack 5 chickens'
+ * chickens(10, 9); // 'You lack 1 chicken'
+ * chickens(10, 15); // 'You have a surplus of 5 chickens'
+ * chickens(10, 11); // 'You have a surplus of 1 chicken'
  *
- * @explaination
- * For the first example, the longest common prefix is 'hello', which has a length of 5.
- * For the second example, there are no common prefix, so the length is 0.
- * For the third example, the longest common prefix is 'ab', which has a length of 2.
  */
-function longestCommonPrefix(string1, string2, string3, string4) {}
+function chickens(required, available) {
+    const diff = required - available;
+    if (diff === 0) {
+        return 'Enough';
+    } else if (diff > 0) {
+        if (diff === 1) {
+            return 'You lack 1 chicken';
+        } else {
+            return 'You lack ' + diff + ' chickens';
+        }
+    } else {
+        if (diff === -1) {
+            return 'You have a surplus of 1 chicken';
+        } else {
+            return 'You have a surplus of ' + -1 * diff + ' chickens';
+        }
+    }
+}
 
-module.exports = longestCommonPrefix;
+module.exports = chickens;
 
 // Your own test cases
 // e.g.;
 
-// console.log(longestCommonPrefix('hello', 'world', 'hello', 'world'));
+// console.log(chickens(12, 5)); // 'You lack 7 chickens'

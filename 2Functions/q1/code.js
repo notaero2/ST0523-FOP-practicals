@@ -21,9 +21,11 @@
  */
 function sumTwoValue() {}
 
-module.exports = sumTwoValue;
-
 // Your own test cases
-// e.g.;
+// e.g.
+console.log(sumTwoValue(1, 2));
 
-// console.log(sumTwoValue(1, 2));
+// To test your code against the test cases: node run.js q1
+// To test your code against custom input: node ./q1/code.js
+
+module.exports = sumTwoValue;

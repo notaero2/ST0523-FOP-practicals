@@ -94,3 +94,24 @@ const hobby = "Programming";
 const color = "White";
 const sentence; // Create the sentence here
 console.log("Q9 " + sentence);
+
+/**
+ * 10 - Swap the values of num1 and num2
+ */
+const num1 = 10;
+const num2 = 20;
+
+// You can use more variables if you need. (Hint: You need them)
+
+console.log("Q10 " + num1 + " " + num2);
+
+/**
+ * 11 (Challenge) - Swap the values without additional variables
+ * HINT: Use + and -
+ */
+let num3 = 10;
+let num4 = 20;
+
+// write your code here
+
+console.log("Q11 " + num1 + " " + num2);

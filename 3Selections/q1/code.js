@@ -1,31 +1,23 @@
 /**
- * Dates are represented differently in US and EU.
- *  In US, it is represented as MM/DD/YYYY
- *  In EU, it is represented as DD/MM/YYYY
+ * Let's revisit foobar again.
  *
- * But they are generally represented as AA/BB/CCCC
+ * foobar is a function that takes a number and returns a string or number.
+ *  If the number is divisible by 3, return "foo"
+ *  If the number is divisible by 5, return "bar"
+ *  If the number is divisible by both 3 and 5, return "foobar"
  *
- * Given 3 parameter, AA, BB, and CCCC, determine whether it follows US, EU, or either.
+ * @param {number} number - The number
+ * @returns {string | number} - "foo" if number is divisible by 3, "bar" if number is divisible by 5, "foobar" if number is divisible by both 3 and 5, otherwise return the number.
  *
- * @param {number} AA - The first part of the date. A number between 1 and 30.
- * @param {number} BB - The second part of the date. A number between 1 and 30.
- * @param {number} CCCC - The third part of the date. A number between 1000 and 9999.
- * You can safely assume that its a valid date.
- *
- * @returns {string} - 'US' if it follows US format, 'EU' if it follows EU format, 'Either' if it can be either.
- *
- * @example
- * dateFormat(12, 30, 2025); // 'US'
- * dateFormat(30, 12, 2025); // 'EU'
- * dateFormat(12, 12, 2025); // 'Either'
- * dateFormat(1, 1, 2025); // 'Either'
- *
+ * This time, use if-else instead of && and ||.
  */
-function dateFormat(AA, BB, CCCC) {}
-
-module.exports = dateFormat;
+function foobar(number) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(dateFormat(12, 30, 2025)); // "US"
+console.log(foobar(3)); // "foo"
+console.log(foobar(4)); // 4
+console.log(foobar(5)); // "bar"
+
+module.exports = foobar;

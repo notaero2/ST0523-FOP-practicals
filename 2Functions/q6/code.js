@@ -20,9 +20,12 @@
  */
 function toGetTargetGPA(gpa, creditsFulfilled, totalCredits, targetGPA) {}
 
-module.exports = toGetTargetGPA;
-
 // Your own test cases
 // e.g.;
 
-// console.log(toGetTargetGPA(0, 0, 120, 3));
+console.log(toGetTargetGPA(0, 0, 120, 3));
+
+// To test your code against the test cases: node run.js q6
+// To test your code against custom input: node ./q6/code.js
+
+module.exports = toGetTargetGPA;

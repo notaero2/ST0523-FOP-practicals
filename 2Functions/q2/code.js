@@ -25,9 +25,12 @@
  */
 function findSlope() {}
 
-module.exports = findSlope;
-
 // Your own test cases
 // e.g.;
 
-// console.log(findSlope(1, 1, 2, 2));
+console.log(findSlope(1, 1, 2, 2));
+
+// To test your code against the test cases: node run.js q2
+// To test your code against custom input: node ./q2/code.js
+
+module.exports = findSlope;

@@ -1,4 +1,11 @@
 /**
+ * foobar is a function that takes a number and returns a string or number.
+ * If the number is divisible by 3, return "foo"
+ * If the number is divisible by 5, return "bar"
+ * If the number is divisible by both 3 and 5, return "foobar"
+ *
+ * This is/was a popular interview question.
+ *
  * @param {number} number - The number
  * @returns {string | number} - "foo" if number is divisible by 3, "bar" if number is divisible by 5, "foobar" if number is divisible by both 3 and 5, otherwise return the number.
  *
@@ -24,9 +31,9 @@
  */
 function foobar(number) {}
 
+console.log(foobar(3));
+
+// To test your code against the test cases: node run.js q5
+// To test your code against custom input: node ./q5/code.js
+
 module.exports = foobar;
-
-// Your own test cases
-// e.g.;
-
-// console.log(foobar(3));

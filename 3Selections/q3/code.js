@@ -1,33 +1,24 @@
 /**
- * You are hosting an event where you are serving chicken.
- * You have ordered a certain number of chickens for the event.
- * You also have the number of attendees at the event.
+ * A common problem in mathematics is to determine which quadrant a given point lies in.
+ * There are four quadrants, numbered from 1 to 4 as shown in the diagram below:
  *
- * You are to decide if you have enough, lack, or a surplus of chickens.
+ *            |
+ *      2     |    1
+ *  (-12, 5)  |  (12, 5)
+ *            |
+ * ----------------------
+ *            |
+ *      3     |    4
+ *  (-12, -5) | (12, -5)
+ *            |
  *
- * - If you have enough, return 'Enough'
- * - If there's a lack, return "You lack x chicken[s]", where x is the number of chickens you lack.
- * - If there's a surplus, return "You have a surplus of x chicken[s]", where x is the number of surplus chickens.
- *
- * Note: chicken is singular if x is 1, and plural otherwise.
- *
- * @param {number} required - The number of chickens required for the event.
- * @param {number} available - The number of chickens available.
- * @returns {string} - The result of the comparison.
- *
- * @example
- * chickens(10, 10); // 'Enough'
- * chickens(10, 5); // 'You lack 5 chickens'
- * chickens(10, 9); // 'You lack 1 chicken'
- * chickens(10, 15); // 'You have a surplus of 5 chickens'
- * chickens(10, 11); // 'You have a surplus of 1 chicken'
- *
+ * Given a coordinate, determine which quadrant it is in.
  */
-function chickens(required, available) {}
+function whichQuadrant(x, y) {}
 
-module.exports = chickens;
+module.exports = whichQuadrant;
 
 // Your own test cases
 // e.g.;
 
-// console.log(chickens(12, 5)); // 'You lack 7 chickens'
+// console.log(whichQuadrant(12, 5)); // 1

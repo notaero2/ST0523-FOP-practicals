@@ -25,9 +25,9 @@ function canCoverPoster(R, W, H) {
     return R * 2 >= diagonal;
 }
 
+console.log(canCoverPoster(2.5, 3, 4)); // true
+
+// To test your code against the test cases: node run.js q4
+// To test your code against custom input: node ./q4/code.js
+
 module.exports = canCoverPoster;
-
-// Your own test cases
-// e.g.;
-
-// console.log(canCoverPoster(2.5, 3, 4)); // false

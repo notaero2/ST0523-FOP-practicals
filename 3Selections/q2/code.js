@@ -1,24 +1,31 @@
 /**
- * A common problem in mathematics is to determine which quadrant a given point lies in.
- * There are four quadrants, numbered from 1 to 4 as shown in the diagram below:
+ * Dates are represented differently in US and EU.
+ *  In US, it is represented as MM/DD/YYYY
+ *  In EU, it is represented as DD/MM/YYYY
  *
- *            |
- *      2     |    1
- *  (-12, 5)  |  (12, 5)
- *            |
- * ----------------------
- *            |
- *      3     |    4
- *  (-12, -5) | (12, -5)
- *            |
+ * But they are generally represented as AA/BB/CCCC
  *
- * Given a coordinate, determine which quadrant it is in.
+ * Given 3 parameter, AA, BB, and CCCC, determine whether it follows US, EU, or either.
+ *
+ * @param {number} AA - The first part of the date. A number between 1 and 30.
+ * @param {number} BB - The second part of the date. A number between 1 and 30.
+ * @param {number} CCCC - The third part of the date. A number between 1000 and 9999.
+ * You can safely assume that its a valid date.
+ *
+ * @returns {string} - 'US' if it follows US format, 'EU' if it follows EU format, 'Either' if it can be either.
+ *
+ * @example
+ * dateFormat(12, 30, 2025); // 'US'
+ * dateFormat(30, 12, 2025); // 'EU'
+ * dateFormat(12, 12, 2025); // 'Either'
+ * dateFormat(1, 1, 2025); // 'Either'
+ *
  */
-function whichQuadrant(x, y) {}
+function dateFormat(AA, BB, CCCC) {}
 
-module.exports = whichQuadrant;
+module.exports = dateFormat;
 
 // Your own test cases
 // e.g.;
 
-// console.log(whichQuadrant(12, 5)); // 1
+// console.log(dateFormat(12, 30, 2025)); // "US"

@@ -71,5 +71,9 @@ function runTestCases() {
     });
 }
 
+if (options.monkeyPatch) {
+    options.monkeyPatch(runCode);
+}
+
 // Run the test cases
 runTestCases();

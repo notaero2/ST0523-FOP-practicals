@@ -11,36 +11,14 @@
  *
  * You are not allowed to use Array.sort() and Array.toSorted() method
  */
-function combineAndSort(sortedArray1, sortedArray2) {
-    let result = [];
-    let i = 0;
-    let j = 0;
-    while (i < sortedArray1.length && j < sortedArray2.length) {
-        if (sortedArray1[i] < sortedArray2[j]) {
-            result.push(sortedArray1[i]);
-            i++;
-        } else {
-            result.push(sortedArray2[j]);
-            j++;
-        }
-    }
-    while (i < sortedArray1.length) {
-        result.push(sortedArray1[i]);
-        i++;
-    }
-    while (j < sortedArray2.length) {
-        result.push(sortedArray2[j]);
-        j++;
-    }
-    return result;
-}
+function combineAndSort(sortedArray1, sortedArray2) {}
 
 // Your own test cases
 // e.g.;
 
 console.log(combineAndSort([1, 3, 5], [2, 4, 6]));
 
-// To test your code against the test cases: node run.js q1
-// To test your code against custom input: node ./q1/code.js
+// To test your code against the test cases: node run.js q2
+// To test your code against custom input: node ./q2/code.js
 
 module.exports = combineAndSort;

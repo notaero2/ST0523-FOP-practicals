@@ -1,26 +1,31 @@
 /**
- * You are given an array of positive integers which represents a sequence of jumps.
- * Each element in the array represents the index of the array (0-based) to jump to.
- * You start at the 0th index.
- * Jumping out of bounds will end the sequence.
- * A cycle is formed if you jump to an index you've already visited.
- * Find out if the sequence of jumps forms a cycle.
+ * Given a array of number, check if they are either
+ * 1. Ascending - each element is greater than the previous
+ * 2. Non-descending - each element is greater than or equal to the previous
+ * 3. Descending - each element is lesser than the previous
+ * 4. Non-ascending - each element is lesser than or equal to the previous
+ * 6. Constant - all elements are the same
+ * 5. Unsorted - none of the above
  *
- * @param {number[]} jumps - An array of numbers where each element represents the index to jump to.
- * @returns {boolean} - Whether the sequence of jumps forms a cycle.
+ * @param {number[]} array - An array of numbers.
+ * @returns {string} - The type of the array.
  *
  * @example
- * detectCycle([1, 2, 0]); // true
- * detectCycle([1, 2, 1]); // true
- * detectCycle([2, 1, 4, 1, 9]); // false
- * detectCycle([2, 4, 1, 6, 3, 9, 5]); // false
- * detectCycle([2, 4, 1, 6, 3, 0, 5]); // true
+ * checkArray([1, 2, 3, 4, 5]); // 'Ascending'
+ * checkArray([5, 4, 3, 2, 1]); // 'Descending'
+ * checkArray([1, 1, 1, 1, 1]); // 'Constant'
+ * checkArray([1, 2, 2, 3, 4]); // 'Non-descending'
+ * checkArray([5, 4, 4, 3, 2]); // 'Non-ascending'
+ * checkArray([1, 2, 4, 3, 5]); // 'Unsorted'
  */
-function detectCycle(jumps) {}
-
-module.exports = detectCycle;
+function checkArray(array) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(detectCycle([1, 2, 0])); // true
+console.log(checkArray([1, 2, 3, 4, 5])); // 'Ascending'
+
+// To test your code against the test cases: node run.js q4
+// To test your code against custom input: node ./q4/code.js
+
+module.exports = checkArray;

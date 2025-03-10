@@ -1,47 +1,54 @@
 /**
- * You are given a list of answers to a MCQ test in an Array.
- * Except, the answer was entered in the wrong order!
- * That is, the first question was missed out and hence each answer is actually entered for the next question.
- *      the answer to the 2nd question was written on the first element of the array
- *      the answer to the 3rd question was written on the second element of the array
- *      and so on...
- *      the answer to the last question was hence left blank.
- * If it was in the correct order, all the answers would be correct.
- * You are to calculate how many questions were answered correctly despite the error.
+ * Given a root note, return the notes of the major scale.
+ * The major scale is a diatonic scale made up of seven distinct notes.
+ * The pattern for a major scale is:
+ * 1. Whole step
+ * 2. Whole step
+ * 3. Half step
+ * 4. Whole step
+ * 5. Whole step
+ * 6. Whole step
+ * 7. Half step
  *
- * @param {string[]} answers - An array of strings where each string is the answer to a question.
- * @returns {number} - The number of questions that were answered correctly.
+ * Examples of half step: C -> C#, D -> D#, F -> F#, G -> G#, A -> A#
+ * Examples of whole step: C -> D, D -> E, F -> G, G -> A, A -> B
+ * The list of notes are: C, C#, D, D#, E, F, F#, G, G#, A, A#, B
+ * Note that there is no E# and B#.
+ *
+ * You can think of whole step as moving two steps to the right and half step as moving one step to the right.
+ * The list of notes is circular, so after B, it goes back to C.
+ *
+ * @param {string} rootNote - The root note of the scale.
+ * @returns {string[]} - The notes of the major scale.
  *
  * @example
- * mcqError(['A', 'A', 'A', 'A', ' ']); // 3
- * mcqError(['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', ' ']); // 5
- * mcqError(['A', 'B', 'C', 'D', 'D', ' ']); // 1
- *
- * @explanation
- * For the first example:
- * - The correct order should be: [' ', 'A', 'A', 'A', 'A']
- * - If it's in the correct order, then Q2-Q5 would be correct.
- * - Comparing them side by side:
- *    - Correct order:  [' ', 'A', 'A', 'A', 'A']
- *    - Given order:    ['A', 'A', 'A', 'A', ' ']
- * - We see that 3 overlaps, hence 3 questions were answered correctly.
- * - We do not know the answer to the first question, hence it is not counted.
- *
- * For the second example:
- * - Correct order:     [' ', 'A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E']
- * - Given order:       ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', ' ']
- * - We see that 5 overlaps (Q2, Q4, Q6, Q8, and Q10), hence 5 questions were answered correctly.
- *
- * For the third example:
- * - Correct order:     [' ', 'A', 'B', 'C', 'D', 'D']
- * - Given order:       ['A', 'B', 'C', 'D', 'D', ' ']
- * - We see that 1 overlap (Q4), hence 1 question was answered correctly.
+ * musicScale('C'); // ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
+ * musicScale('G'); // ['G', 'A', 'B', 'C', 'D', 'E', 'F#', 'G']
+ * musicScale('D'); // ['D', 'E', 'F#', 'G', 'A', 'B', 'C#', 'D]
  */
-function mcqError(answers) {}
-
-module.exports = mcqError;
+function musicScale(rootNote) {
+    const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    const steps = [2, 2, 1, 2, 2, 2, 1];
+    const scale = [];
+    const rootIndex = notes.indexOf(rootNote);
+    let currentIndex = rootIndex;
+    scale.push(notes[currentIndex]);
+    for (let i = 0; i < steps.length; i++) {
+        currentIndex += steps[i];
+        if (currentIndex >= notes.length) {
+            currentIndex -= notes.length;
+        }
+        scale.push(notes[currentIndex]);
+    }
+    return scale;
+}
 
 // Your own test cases
 // e.g.;
 
-// console.log(mcqError(['A', 'A', 'A', 'A', ' ']));
+console.log(musicScale('C')); // ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'];
+
+// To test your code against the test cases: node run.js q2
+// To test your code against custom input: node ./q2/code.js
+
+module.exports = musicScale;

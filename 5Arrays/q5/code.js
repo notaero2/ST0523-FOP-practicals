@@ -1,54 +1,29 @@
 /**
- * You are given an encoded message in a string.
- * The original message is encoded by
- * 1. first placing the characters in a square matrix,
- * 2. and then the matrix is rotated 90 degress clockwise.
- * 3. Then the characters are read off row by row to form the encoded message
+ * You are given an array of positive integers which represents a sequence of jumps.
+ * Each element in the array represents the index of the array (0-based) to jump to.
+ * You start at the 0th index.
+ * Jumping out of bounds will end the sequence.
+ * A cycle is formed if you jump to an index you've already visited.
+ * Find out if the sequence of jumps forms a cycle.
  *
- * Your task is to decode the message by reversing the steps and return it as a string.
- *
- * @param {string} message - The encoded message, the length of the message is a perfect square.
- * @returns {string} - The decoded message.
+ * @param {number[]} jumps - An array of numbers where each element represents the index to jump to.
+ * @returns {boolean} - Whether the sequence of jumps forms a cycle.
  *
  * @example
- * decodeMessage('RSTEEOTCP'); // 'TOPSECRET'
- * decodeMessage('eedARBtVrolsiesuAoReerles'); // 'RosesAreRedVioletsAreBlue'
- * decodeMessage('EarSvyeqeBsuneMa'); // 'SquaresMayBeEven'
- *
- * @explanation
- * For the first example:
- * - The original message is 'TOPSECRET'
- * - Placing the characters in a square matrix:
- *      T O P
- *      S E C
- *      R E T
- * - Rotating the matrix 90 degrees clockwise:
- *      R S T
- *      E E O
- *      T C P
- * - Reading off row by row gives 'RSTEEOTCP'
- *
- * For the second example:
- * - The original message is 'RosesAreRedVioletsAreBlue'
- * - Placing the characters in a square matrix:
- *      R o s e s
- *      A r e R e
- *      d V i o l
- *      e t s A r
- *      e B l u e
- * - Rotating the matrix 90 degrees clockwise:
- *      e e d A R
- *      B t V r o
- *      l s i e s
- *      u A o R e
- *      e r l e s
- * - Reading off row by row gives 'eedARBtVrolsiesuAoReerles'
+ * detectCycle([1, 2, 0]); // true
+ * detectCycle([1, 2, 1]); // true
+ * detectCycle([2, 1, 4, 1, 9]); // false
+ * detectCycle([2, 4, 1, 6, 3, 9, 5]); // false
+ * detectCycle([2, 4, 1, 6, 3, 0, 5]); // true
  */
-function decodeMessage(message) {}
-
-module.exports = decodeMessage;
+function detectCycle(jumps) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(decodeMessage('RSTEEOTCP'));
+console.log(detectCycle([1, 2, 0])); // true
+
+// To test your code against the test cases: node run.js q5
+// To test your code against custom input: node ./q5/code.js
+
+module.exports = detectCycle;

@@ -1,28 +1,25 @@
 /**
- * Given a array of number, check if they are either
- * 1. Ascending - each element is greater than the previous
- * 2. Non-descending - each element is greater than or equal to the previous
- * 3. Descending - each element is lesser than the previous
- * 4. Non-ascending - each element is lesser than or equal to the previous
- * 6. Constant - all elements are the same
- * 5. Unsorted - none of the above
+ * Produce an array of the first k multiples of n.
  *
- * @param {number[]} array - An array of numbers.
- * @returns {string} - The type of the array.
+ * @param {number} n - The number to be multiplied. (-1000 <= n <= 1000)
+ * @param {number} k - The number of multiples to produce. (k >= 0)
+ *
+ * @returns {number[]} - An array of the first k multiples of n.
  *
  * @example
- * checkArray([1, 2, 3, 4, 5]); // 'Ascending'
- * checkArray([5, 4, 3, 2, 1]); // 'Descending'
- * checkArray([1, 1, 1, 1, 1]); // 'Constant'
- * checkArray([1, 2, 2, 3, 4]); // 'Non-descending'
- * checkArray([5, 4, 4, 3, 2]); // 'Non-ascending'
- * checkArray([1, 2, 4, 3, 5]); // 'Unsorted'
+ * multiplication(2, 5); // [2, 4, 6, 8, 10]
+ * multiplication(3, 4); // [3, 6, 9, 12]
+ * multiplication(5, 3); // [5, 10, 15]
+ *
  */
-function checkArray(array) {}
-
-module.exports = checkArray;
+function multiplication(n, k) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(checkArray([1, 2, 3, 4, 5]));
+console.log(multiplication(2, 5)); // [2, 4, 6, 8, 10]
+
+// To test your code against the test cases: node run.js q1
+// To test your code against custom input: node ./q1/code.js
+
+module.exports = multiplication;

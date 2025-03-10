@@ -2,17 +2,15 @@ module.exports = {
     testcases: [
         {
             inputs: [
-                [160, 17, false, false],
-                [160, 17, true, false],
-                [160, 17, false, true],
-                [160, 17, true, true],
-                [100, 17, false, false],
-                [160, 12, false, false],
-                [160, 12, true, false],
-                [160, 12, false, true],
-                [160, 12, true, true],
+                [2.5, 3, 4],
+                [5, 3, 4],
+                [2, 3, 4],
+                [6.5, 5, 12],
+                [12.5, 7, 24],
+                [12.5, 7, 25],
+                [4, 1, 30],
             ],
-            expected: [true, true, false, false, false, false, true, false, false],
+            expected: [true, true, false, true, true, false, false],
         },
     ],
 };

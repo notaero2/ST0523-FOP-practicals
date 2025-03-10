@@ -1,34 +1,33 @@
 /**
- * @param {number} height - The height of the person in cm
- * @param {number} age - The age of the person in years
- * @param {boolean} withParent - Whether the person is with a parent or guardian
- * @param {boolean} hasHeartCondition - Whether the person has a heart condition
- * @returns {boolean} - Whether the person can sit on the rollercoaster
+ * You are given a circular poster of radius R, and you are to cover up an existing rectangular poster of dimensions W x H.
  *
- * The requirements are:
- * - The person must be at least 120cm tall AND
- * - The person must be at least 16 years old, or be with a parent or guardian AND
- * - The person must not have a heart condition AND
+ * Determine if the circular poster can cover up the rectangular poster completely.
+ *
+ * A circular poster can cover up a rectangular poster
+ * if the diameter of the circular poster is greater than or equal to the diagonal of the rectangular poster.
+ * You can find the diagonal using the pythagorean theorem
+ *
+ * @param {number} R - The radius of the circular poster
+ * @param {number} W - The width of the rectangular poster
+ * @param {number} H - The height of the rectangular poster
+ *
+ * @returns {boolean} - Whether the circular poster can cover up the rectangular poster completely
  *
  * @example
- * canSitRollercoaster(130, 15, true, false); // false
- * canSitRollercoaster(130, 15, false, false); // true
- * canSitRollercoaster(130, 15, true, true); // false
- * canSitRollercoaster(100, 16, false, false); // false
- *
- * @explaination
- * The person is not allowed to sit on the rollercoaster as the age is less than 16.
- * The person is allowed to sit on the rollercoaster even though the age is less than 16 as they are with their parent.
- * The person is not allowed to sit on the rollercoaster as the person has a heart condition.
- * The person is not allowed to sit on the rollercoaster as the person is not tall enough.
- *
+ * canCoverPoster(2.5, 3, 4); // true
+ * canCoverPoster(5, 3, 4); // true
+ * canCoverPoster(4, 1, 30); // false
  *
  */
-function canSitRollercoaster(height, age, withParent, hasHeartCondition) {}
+function canCoverPoster(R, W, H) {
+    // Write your code here
+    var diagonal = Math.sqrt(Math.pow(W, 2) + Math.pow(H, 2));
+    return R * 2 >= diagonal;
+}
 
-module.exports = canSitRollercoaster;
+module.exports = canCoverPoster;
 
 // Your own test cases
 // e.g.;
 
-// console.log(canSitRollercoaster(130, 15, true, false)); // false
+// console.log(canCoverPoster(2.5, 3, 4)); // false

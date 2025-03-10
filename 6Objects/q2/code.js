@@ -1,55 +1,35 @@
 /**
- * There are multiple delivery trucks that need to be assigned to different locations.
- * Each delivery truck is identified by the driver's name,
- * and each location is identified by either North, South, East or West
- * Each delivery truck can be assigned to multiple packets to be delivered to different locations.
+ * Calculate the area of a shape
  *
- * You are building a system that keep tracks of the delivery trucks and their assigned locations.
- * This system has the following commands:
- * 1. assign [DRIVER_NAME] [LOCATION] - This command assigns a packet for [LOCATION] to [DRIVER_NAME].
- * 2. queryDriver [DRIVER_NAME] - This command returns the total number of packets assigned to the driver.
- * 3. queryLocation [LOCATION] - This command returns the total number of packets assigned to the location.
- * 4. query [DRIVER_NAME] [LOCATION] - This command returns the total number of packets assigned to the driver for the location.
+ * There are four types of shapes:
+ * 1. Circle, e.g. { type: 'circle', radius: 5 }
+ * 2. Rectangle, e.g. { type: 'rectangle', length: 5, width: 10 }
+ * 3. Triangle, e.g. { type: 'triangle', base: 5, height: 10 }
+ * 4. Square, e.g. { type: 'square', side: 5 }
  *
- * If no packet has been assigned to a driver or location, the query command should return 0.
+ * The area of a shape is calculated as follows:
+ * 1. Circle: π * r^2
+ * 2. Rectangle: length * width
+ * 3. Triangle: 0.5 * base * height
+ * 4. Square: side * side
  *
- * @param {string[]} commands - An array of strings where each string is a command.
- * @returns {number[]} - An array of numbers where each number is the output of the query command.
+ * @param {Object} shape
+ * @returns {number} - The area of the shape
  *
  * @example
- * deliveryAssignment([
- *  'assign Alice North',
- *  'assign Bob South',
- *  'assign Alice South',
- *  'queryDriver Alice',
- *  'queryLocation South',
- *  'query Alice South',
- *  'queryDriver Charlie',
- *  'assign Charlie South',
- *  'queryDriver Charlie',
- * ]); // [2, 2, 1, 0, 1]
- *
- * @explanation
- * For the first example:
- * - The first command assigns a packet for North to Alice.
- * - The second command assigns a packet for South to Bob.
- * - The third command assigns a packet for South to Alice.
- * - The fourth command returns the total number of packets assigned to Alice, which is 2.
- * - The fifth command returns the total number of packets assigned to South, which is 2.
- * - The sixth command returns the total number of packets assigned to Alice for South, which is 1.
- * - The seventh command returns 0 since Charlie has not been assigned any packets.
- * - The eighth command assigns a packet for South to Charlie.
- * - The ninth command returns the total number of packets assigned to Charlie, which is 1.
+ * calculateArea({ type: 'circle', radius: 5 }); // 78.54
+ * calculateArea({ type: 'rectangle', length: 5, width: 10 }); // 50
+ * calculateArea({ type: 'triangle', base: 5, height: 10 }); // 25
+ * calculateArea({ type: 'square', side: 5 }); // 25
  */
-function deliveryAssignment(commands) {}
-
-module.exports = deliveryAssignment;
+function calculateArea(shape) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(deliveryAssignment([
-//   'assign Alice North',
-//   'assign Bob South',
-//   'query Alice North'
-// ]));
+console.log(calculateArea({ type: 'circle', radius: 5 })); // 78.54
+
+// To test your code against the test cases: node run.js q2
+// To test your code against custom input: node ./q2/code.js
+
+module.exports = calculateArea;

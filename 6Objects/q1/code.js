@@ -1,21 +1,30 @@
 /**
- * You are given a mapping from module to tutors. That is, a module can have multiple tutors.
+ * Create an object with the following properties:
+ * - name: The name of the person
+ * - birthday: The birthday of the person
+ * - friends: An array of the person's friends
  *
- * You are to reverse the mapping such that each tutor is mapped to the modules they teach.
+ * @param {string} name - The name of the person
+ * @param {string} birthday - The birthday of the person
+ * @param {string} friend1 - The first friend of the person
+ * @param {string} friend2 - The second friend of the person
+ * @param {string} friend3 - The third friend of the person
  *
- * @param {Object} moduleToTutors - An object where each key is a module and the value is an array of tutors.
- * @returns {Object} - An object where each key is a tutor and the value is an array of modules they teach.
+ * @returns {Object} - An object with the properties name, birthday, and friends
  *
  * @example
- * reverseMapping({ 'ST0523': ['Alice', 'Bob'], 'ST0501': ['Alice', 'John', 'Charlie'], 'ST2413': ['John', 'Charlie'] });
- *      // returns:  { 'Alice': ['ST0523', 'ST0501'], 'Bob': ['ST0523'], 'John': ['ST0501', 'ST2413'], 'Charlie': ['ST0501', 'ST2413'] }
+ * makeObject('John', '01/01/2000', 'Alice', 'Bob', 'Charlie'); // { name: 'John', birthday: '01/01/2000', friends: [ 'Alice', 'Bob', 'Charlie' ] }
+ * makeObject('Alice', '02/02/2001', 'Bob', 'Charlie', 'David'); // { name: 'Alice', birthday: '02/02/2001', friends: [ 'Bob', 'Charlie', 'David' ] }
  *
  */
-function reverseMapping(moduleToTutors) {}
-
-module.exports = reverseMapping;
+function makeObject(name, birthday, friend1, friend2, friend3) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(reverseMapping({ 'ST0523': ['Alice', 'Bob'], 'ST0501': ['Alice', 'John', 'Charlie'], 'ST2413': ['John', 'Charlie'] }));
+console.log(makeObject('John', '01/01/2000', 'Alice', 'Bob', 'Charlie')); // { name: 'John', birthday: '01/01/2000', friends: [ 'Alice', 'Bob', 'Charlie' ] }
+
+// To test your code against the test cases: node run.js q1
+// To test your code against custom input: node ./q1/code.js
+
+module.exports = makeObject;

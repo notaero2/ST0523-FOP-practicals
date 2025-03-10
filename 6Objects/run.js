@@ -27,7 +27,15 @@ if (!fs.existsSync(codePath) || !fs.existsSync(testCasesPath)) {
     process.exit(1);
 }
 
-const runCode = require(codePath); // Assuming code.js exports a `runCode` function
+function silentRequire(codePath) {
+    const originalLog = console.log;
+    console.log = () => {};
+    const runCode = require(codePath); // Assuming code.js exports a `runCode` function
+    console.log = originalLog;
+    return runCode;
+}
+
+const runCode = silentRequire(codePath);
 const { testcases, options = {} } = require(testCasesPath); // Destructure testcases and options
 
 function deepEqual(a, b) {
@@ -75,6 +83,10 @@ function runTestCases() {
             }
         });
     });
+}
+
+if (options.monkeyPatch) {
+    options.monkeyPatch(runCode);
 }
 
 // Run the test cases

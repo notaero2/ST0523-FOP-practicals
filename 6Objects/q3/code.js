@@ -1,52 +1,31 @@
 /**
- * You are writing a program to help someone remember the year of their nth trip
+ * You are given a a list of modules and their mapping from module to tutors. That is, a module can have multiple tutors.
  *
- * You are given 2 inputs
- * 1. The place and the year a person travelled to that country, in no particular order
- *    - Each place is a single word
- *    - Each year is a 4-digit number
- *    - Separated by a space
- * 2. A list of queries, each query is a string that contains the name of the place and a number indicating the nth trip to that place
- *    - You can safely assume that the queries are valid and the nth trip to a place is always valid
+ * You are to reverse the mapping such that each tutor is mapped to the modules they teach.
  *
- * You are to return an array of numbers where each number is the year of the nth trip to that place
- *
- * @param {string[]} trips - An array of strings where each string is the name of the place and the year of the trip
- * @param {string[]} queries - An array of strings where each string is the name of the place and the nth trip to that place
- * @returns {number[]} - An array of numbers where each number is the year of the nth trip to that place
+ * @param {Array} modules - An array of all the modules in the mapping.
+ * @param {Object} moduleToTutors - An object where each key is a module and the value is an array of tutors.
+ * @returns {Object} - An object where each key is a tutor and the value is an array of modules they teach.
  *
  * @example
- * tripYear(['Paris 2019', 'Paris 2020', 'London 2021'], ['Paris 1', 'Paris 2', 'London 1']);
- * Output: [2019, 2020, 2021]
- *
- * tripYear(['Iceland 2016', 'Sweden 2015', 'Iceland 1982', 'Norway 1999'], ['Sweden 1', 'Iceland 1', ' Iceland 2']);
- * Output: [2015, 1982, 2016]
- *
- * tripYear(['Japan 2003', 'Japan 2002', 'Japan 2001'], ['Japan 1', 'Japan 2', 'Japan 3']);
- * Output: [2001, 2002, 2003]
- *
- * @explanation
- * For the first example:
- * - The first query is 'Paris 1', the first trip to Paris was in 2019
- * - The second query is 'Paris 2', the second trip to Paris was in 2020
- * - The third query is 'London 1', the first trip to London was in 2021
- *
- * For the second example:
- * - The first query is 'Sweden 1', the first trip to Sweden was in 2015
- * - The second query is 'Iceland 1', the first trip to Iceland was in 1982
- * - The third query is 'Iceland 2', the second trip to Iceland was in 2016
- *
- * For the third example:
- * - The first query is 'Japan 1', the first trip to Japan was in 2001
- * - The second query is 'Japan 2', the second trip to Japan was in 2002
- * - The third query is 'Japan 3', the third trip to Japan was in 2003
+ * reverseMapping(['ST0523', 'ST0501', 'ST2413'], { 'ST0523': ['Alice', 'Bob'], 'ST0501': ['Alice', 'John', 'Charlie'], 'ST2413': ['John', 'Charlie'] });
+ *      // returns:  { 'Alice': ['ST0523', 'ST0501'], 'Bob': ['ST0523'], 'John': ['ST0501', 'ST2413'], 'Charlie': ['ST0501', 'ST2413'] }
  *
  */
-function tripYear(trips, queries) {}
-
-module.exports = tripYear;
+function reverseMapping(modules, moduleToTutors) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(tripYear(['Paris 2019', 'Paris 2020', 'London 2021'], ['Paris 1', 'Paris 2', 'London 1']));
+console.log(
+    reverseMapping(['ST0523', 'ST0501', 'ST2413'], {
+        ST0523: ['Alice', 'Bob'],
+        ST0501: ['Alice', 'John', 'Charlie'],
+        ST2413: ['John', 'Charlie'],
+    }),
+);
+
+// To test your code against the test cases: node run.js q3
+// To test your code against custom input: node ./q3/code.js
+
+module.exports = reverseMapping;

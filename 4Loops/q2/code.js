@@ -1,25 +1,36 @@
 /**
- * Estimate pi using the Leibniz formula
+ * Given a number n, return the nth number in the Fibonacci sequence.
+ * The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones.
+ * That is:
+ *  The first is 0;
+ *  The second is 1;
+ *  The third is the sum of the first and second: 0 + 1 = 1;
+ *  The fourth is the sum of the second and third: 1 + 1 = 2;
+ *  The fifth is the sum of the third and fourth: 1 + 2 = 3;
+ *  The sixth is the sum of the fourth and fifth: 2 + 3 = 5;
+ *  The seventh is the sum of the fifth and sixth: 3 + 5 = 8
+ * and so on...
  *
- * The Leibniz formula for pi is an infinite series that converges to pi.
- * The formula is:
- * pi = 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - ...)
- * The denominator of each fraction is the odd numbers starting from 1.
- * Note: The sign alternates between + and -
- *
- * @param {number} numberOfFractions - number of fractions to compute
- * @returns {number} - The estimated value of pi
+ * @param {number} n
+ * @returns {number} - The sum of the first n numbers in the Fibonacci sequence
  *
  * @example
- * pi(6);   // 2.9760461760461765   => 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11)
- * pi(8);   // 3.017071817071818    => 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 - 1/15)
- * pi(10);  // 3.0418396189294032   => 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 - 1/15 + 1/17 - 1/19)
+ * The first 10 fibonacci numbers are 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, therefore:
+ * fibonacci(1); // 0
+ * fibonacci(2); // 1
+ * fibonacci(3); // 1
+ * fibonacci(4); // 2
+ * fibonacci(7); // 8
+ * fibonacci(10); // 34
  */
-function pi(numberOfFractions) {}
-
-module.exports = pi;
+function fibonacci(n) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(pi(6));
+console.log(fibonacci(10)); // 34
+
+// To test your code against the test cases: node run.js q2
+// To test your code against custom input: node ./q2/code.js
+
+module.exports = fibonacci;

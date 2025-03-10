@@ -23,9 +23,12 @@
  */
 function dateFormat(AA, BB, CCCC) {}
 
-module.exports = dateFormat;
-
 // Your own test cases
 // e.g.;
 
-// console.log(dateFormat(12, 30, 2025)); // "US"
+console.log(dateFormat(12, 30, 2025)); // "US"
+
+// To test your code against the test cases: node run.js q2
+// To test your code against custom input: node ./q2/code.js
+
+module.exports = dateFormat;

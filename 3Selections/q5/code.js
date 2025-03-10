@@ -53,9 +53,12 @@
  */
 function canProceed(currentPosition, targetPosition, incomingVehiclePosition) {}
 
-module.exports = canProceed;
-
 // Your own test cases
 // e.g.;
 
-// console.log(canProceed('south', 'north', 'east')); // 'Stop'
+console.log(canProceed('south', 'north', 'east')); // 'Stop'
+
+// To test your code against the test cases: node run.js q5
+// To test your code against custom input: node ./q5/code.js
+
+module.exports = canProceed;

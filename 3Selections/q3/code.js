@@ -16,9 +16,12 @@
  */
 function whichQuadrant(x, y) {}
 
-module.exports = whichQuadrant;
-
 // Your own test cases
 // e.g.;
 
-// console.log(whichQuadrant(12, 5)); // 1
+console.log(whichQuadrant(12, 5)); // 1
+
+// To test your code against the test cases: node run.js q3
+// To test your code against custom input: node ./q3/code.js
+
+module.exports = whichQuadrant;

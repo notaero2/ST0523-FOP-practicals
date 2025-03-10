@@ -25,9 +25,12 @@
  */
 function chickens(required, available) {}
 
-module.exports = chickens;
-
 // Your own test cases
 // e.g.;
 
-// console.log(chickens(12, 5)); // 'You lack 7 chickens'
+console.log(chickens(12, 5)); // 'You lack 7 chickens'
+
+// To test your code against the test cases: node run.js q4
+// To test your code against custom input: node ./q4/code.js
+
+module.exports = chickens;

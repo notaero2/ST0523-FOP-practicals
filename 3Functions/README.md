@@ -1,4 +1,4 @@
-# 2. Functions
+# 3. Functions
 
 ## Topic Overview
 

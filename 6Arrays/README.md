@@ -1,4 +1,4 @@
-# 5. Arrays
+# 6. Arrays
 
 ## Topic Overview
 

@@ -1,4 +1,4 @@
-# 6. Objects
+# 8. Objects
 
 ## Topic Overview
 
@@ -13,6 +13,8 @@ While making use of previous topics such as
 -   functions
 -   if-else
 -   for-loop
+-   while-loop
+-   nested-loop
 -   arrays
 
 ## Instructions

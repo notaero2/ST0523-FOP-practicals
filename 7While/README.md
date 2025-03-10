@@ -1,8 +1,20 @@
-# 7. Problem Solving
+# 7. While & Nested Loops
 
 ## Topic Overview
 
-This set of question consolidates all the topics. Requiring you to solve problem using all that you have learnt.
+This set of problems focuses on the use of:
+
+-   while-oops
+-   nested-oops
+
+While making use of previous topics such as
+
+-   variables
+-   data types
+-   functions
+-   if-else
+-   for-loop
+-   arrays
 
 ## Instructions
 

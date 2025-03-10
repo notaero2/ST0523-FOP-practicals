@@ -28,10 +28,12 @@ Quick start without downloading:
 
 ## Instructions
 
-1. Before you start, run the task `npm: watch` (`ctrl + shift + p` > `Task: Run Task`)
+> Note: Instructions for Set 1 - Operators is slightly different, refer to the instruction within the `1Operator` folder.
+
+1. (Optional, applicable only if you cloned a fork of the repo) Before you start, run the task `npm: watch` (`ctrl + shift + p` > `Task: Run Task`)
     - This automatically uploads your saves to GitHub
 2. Change directory to the relevant set
-    - e.g. `cd 1Operators`
+    - e.g. `cd 2Functions`
 3. Solve the problems by modifying the `code.js` in each question folder.
 4. To run the program:
     - Run `node run.js q#` replacing # with the question number.

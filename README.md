@@ -19,27 +19,34 @@ Quick start without downloading:
 
 ## Table of Content
 
-1. Set 1 - Operators
-2. Set 2 - Functions
-3. Set 3 - Selections (If-else)
-4. Set 4 - Loops
-5. Set 5 - Arrays
-6. Set 6 - Objects
+-   Set 2 - Operators
+-   Set 3 - Functions
+-   Set 4 - Selections (If-else)
+-   Set 5 - For-Loops
+-   Set 6 - Arrays
+-   Set 7 - While & Nested loops
+-   Set 8 - Objects
+-   Set 9 - Problem Solving
 
 ## Instructions
 
-> Note: Instructions for Set 1 - Operators is slightly different, refer to the instruction within the `1Operator` folder.
-
-1. **(Optional, applicable only if you cloned a fork of the repo)** Before you start, run the task `npm: watch` (`ctrl + shift + p` > `Task: Run Task`)
-    - This automatically uploads your saves to GitHub periodically
-2. Change directory to the relevant set
-    - e.g. `cd 2Functions`
-3. Solve the problems by modifying the `code.js` in each question folder.
-4. To run the program:
+1. Change directory to the relevant set
+    - e.g. `cd 3Functions`
+2. Solve the problems by modifying the `code.js` in each question folder.
+3. To run the program:
     - Run `node run.js q#` replacing # with the question number.
     - e.g. `node run.js q1` to run q1.
-5. To add your own test cases:
+4. To add your own test cases:
     - Add additional function calls at the bottom of the `code.js`
     - Run `node ./q#/code.js` replace # with the question number.
     - e.g. `node ./q4/code.js`
-6. Do not modify the `testcases.js` of each question.
+5. Do not modify the `testcases.js` of each question.
+
+## Visualizing effort
+
+1. **Pre-requisite:**
+    1. Git must be installed
+    2. The project must be cloned with .git folder
+2. run `npm run watch` to start auto committing and pushing
+3. run `npm run extract-git-history` to extract the history
+4. Open `.vscode/visualizer/visualize-git-history.html` to view

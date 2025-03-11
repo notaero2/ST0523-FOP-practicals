@@ -12,14 +12,14 @@
  * @returns {boolean} - Whether the person can sit on the rollercoaster
  *
  * @example
- * canSitRollercoaster(130, 15, true, false); // false
- * canSitRollercoaster(130, 15, false, false); // true
+ * canSitRollercoaster(130, 15, true, false); // true
+ * canSitRollercoaster(130, 15, false, false); // false
  * canSitRollercoaster(130, 15, true, true); // false
  * canSitRollercoaster(100, 16, false, false); // false
  *
  * @explaination
- * The person is not allowed to sit on the rollercoaster as the age is less than 16.
  * The person is allowed to sit on the rollercoaster even though the age is less than 16 as they are with their parent.
+ * The person is not allowed to sit on the rollercoaster as the age is less than 16.
  * The person is not allowed to sit on the rollercoaster as the person has a heart condition.
  * The person is not allowed to sit on the rollercoaster as the person is not tall enough.
  *
@@ -27,7 +27,7 @@
  */
 function canSitRollercoaster(height, age, withParent, hasHeartCondition) {}
 
-console.log(canSitRollercoaster(130, 15, true, false)); // false
+console.log(canSitRollercoaster(130, 15, true, false)); // true
 
 // To test your code against the test cases: node run.js q3
 // To test your code against custom input: node ./q3/code.js

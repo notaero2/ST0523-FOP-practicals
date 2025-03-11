@@ -10,7 +10,7 @@
  * digitSum(0); // 0
  * digitSum(2025); // 2 + 0 + 2 + 5 = 9
  *
- * Hint: You can access the nth digit of a number by dividing it by 10^(n-1) and taking the remainder when divided by 10.
+ * Hint: You can access the nth digit of a number by dividing it by 10**(n-1) and taking the remainder when divided by 10.
  */
 function digitSum(n) {}
 

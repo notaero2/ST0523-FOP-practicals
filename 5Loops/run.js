@@ -38,13 +38,27 @@ function silentRequire(codePath) {
 const runCode = silentRequire(codePath);
 const { testcases, options = {} } = require(testCasesPath); // Destructure testcases and options
 
+function deepEqual(a, b) {
+    if (a === b) return true;
+
+    if (typeof a !== 'object' || typeof b !== 'object' || a === null || b === null) return false;
+
+    if (Object.keys(a).length !== Object.keys(b).length) return false;
+
+    for (let key in a) {
+        if (!(key in b) || !deepEqual(a[key], b[key])) return false;
+    }
+
+    return true;
+}
+
 // Function to compare values based on options
 function compareResults(result, expected) {
     if (options.type === 'floating point') {
         const precision = options.precision || 6;
         return Math.abs(result - expected) < Math.pow(10, -precision);
-    } else if (options.type === 'array') {
-        return JSON.stringify(result) === JSON.stringify(expected);
+    } else if (options.type === 'JSON') {
+        return deepEqual(result, expected);
     }
     return result === expected;
 }
@@ -69,6 +83,10 @@ function runTestCases() {
             }
         });
     });
+}
+
+if (options.monkeyPatch) {
+    options.monkeyPatch(runCode);
 }
 
 // Run the test cases

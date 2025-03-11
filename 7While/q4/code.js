@@ -23,7 +23,7 @@ function detectCycle(jumps) {}
 
 console.log(detectCycle([1, 2, 0])); // true
 
-// To test your code against the test cases: node run.js q5
-// To test your code against custom input: node ./q5/code.js
+// To test your code against the test cases: node run.js q4
+// To test your code against custom input: node ./q4/code.js
 
 module.exports = detectCycle;

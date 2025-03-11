@@ -152,8 +152,7 @@ function runQuestions() {
         questions = readQuestionInputFromCurrentFolder();
     }
 
-    questions.forEach((question) => {
-        console.log(`${problemSet}/${question}`);
+    const allResults = questions.map((question) => {
         const { codePath, testCasesPath } = getCodeAndTestCasesPath(problemSet, question);
         const runCode = silentRequire(codePath);
         const { testcases, options = {} } = require(testCasesPath); // Destructure testcases and options
@@ -164,6 +163,11 @@ function runQuestions() {
 
         // Run the test cases
         const results = runTestCases(runCode, testcases, options);
+        return { question, results };
+    });
+
+    allResults.forEach(({ question, results }) => {
+        console.log(`${problemSet}/${question}`);
         results.forEach((result) => {
             result.forEach((testCase) => {
                 if (testCase.error) {
@@ -184,6 +188,15 @@ function runQuestions() {
             });
         });
     });
+
+    console.table(
+        allResults.map(({ question, results }) => {
+            const totalQuestions = results.map((result) => result.length).reduce((acc, val) => acc + val, 0);
+            const failed = results.map((result) => result.filter((testCase) => !testCase.passed)).flat().length;
+            const passed = totalQuestions - failed;
+            return { question, passed, failed, totalQuestions };
+        }),
+    );
 }
 
 runQuestions();

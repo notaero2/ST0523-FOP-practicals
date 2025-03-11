@@ -5,6 +5,8 @@
     /.  .\
     | \/ |
     \____/
+
+ * Refer to screenshots folder for the expected output
  */
 
 console.log('');

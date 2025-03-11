@@ -1,6 +1,8 @@
 /**
  * 2 - Add comment to each line, explaining what it is doing
  *
+ * Pay attention to the sequence of what happens in each line
+ *
  */
 
 let oldTax = 6;

@@ -11,6 +11,9 @@
  * Notes:
     1. Quotation ("") needed around Fundamentals of Programming
     2. The space between the assessment and their weightage is 3 tabs (\t)
+
+
+ * Refer to screenshots folder for the expected output
  */
 
 console.log('');

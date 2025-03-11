@@ -40,6 +40,12 @@
  * - The seventh command returns 0 since Charlie has not been assigned any packets.
  * - The eighth command assigns a packet for South to Charlie.
  * - The ninth command returns the total number of packets assigned to Charlie, which is 1.
+ *
+ * @hint
+ * You can use 3 different objects
+ * 1. To keep track of how many order a driver has - e.g. drivers['Alice']
+ * 2. To keep track of how many order a location has - e.g. locations['South']
+ * 3. To keep track of how many order a (driver, location) pair has - e.g. combo['Alice']['South']
  */
 function deliveryAssignment(commands) {}
 

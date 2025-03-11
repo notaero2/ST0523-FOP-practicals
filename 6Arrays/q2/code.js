@@ -1,39 +1,36 @@
 /**
- * Given a root note, return the notes of the major scale.
- * The major scale is a diatonic scale made up of seven distinct notes.
- * The pattern for a major scale is:
- * 1. Whole step
- * 2. Whole step
- * 3. Half step
- * 4. Whole step
- * 5. Whole step
- * 6. Whole step
- * 7. Half step
+ * Counts how many times an element matches the one before it in the array.
  *
- * Examples of half step: C -> C#, D -> D#, F -> F#, G -> G#, A -> A#
- * Examples of whole step: C -> D, D -> E, F -> G, G -> A, A -> B
- * The list of notes are: C, C#, D, D#, E, F, F#, G, G#, A, A#, B
- * Note that there is no E# and B#.
- *
- * You can think of whole step as moving two steps to the right and half step as moving one step to the right.
- * The list of notes is circular, so after B, it goes back to C.
- *
- * @param {string} rootNote - The root note of the scale.
- * @returns {string[]} - The notes of the major scale.
+ * @param {string[]} strings - An array of strings, the last one will always be an empty string.
+ * @returns {number} - The number of matching pairs.
  *
  * @example
- * musicScale('C'); // ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
- * musicScale('G'); // ['G', 'A', 'B', 'C', 'D', 'E', 'F#', 'G']
- * musicScale('D'); // ['D', 'E', 'F#', 'G', 'A', 'B', 'C#', 'D]
+ * adjacentMatchCount(['A', 'A', 'A', 'A', ' ']); // 3
+ * adjacentMatchCount(['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', ' ']); // 5
+ * adjacentMatchCount(['A', 'B', 'C', 'D', 'D', ' ']); // 1
+ *
+ * @explanation
+ * Putting the original and shifted side by side:
+ * For the first example:
+ *  Original:    ['A', 'A', 'A', 'A', ' ']
+ *  Shifted:     [' ', 'A', 'A', 'A', 'A']
+ *
+ *  Elements at position 1, 2, and 3 matches its previous element.
+ *
+ * For the second example:
+ *  Original:   ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', ' ']
+ *  Shifted:    [' ', 'A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E']
+ *
+ *  Elements at position 1, 3, 5, 7, 9, and 11 matches its previous element
  */
-function musicScale(rootNote) {}
+function adjacentMatchCount(strings) {}
 
 // Your own test cases
 // e.g.;
 
-console.log(musicScale('C')); // ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'];
+console.log(adjacentMatchCount(['A', 'A', 'A', 'A', ' '])); // 3
 
 // To test your code against the test cases: node run.js q2
 // To test your code against custom input: node ./q2/code.js
 
-module.exports = musicScale;
+module.exports = adjacentMatchCount;

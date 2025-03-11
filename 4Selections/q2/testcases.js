@@ -11,7 +11,7 @@ module.exports = {
                 [10, 22, 2003],
                 [1, 30, 2013],
             ],
-            expected: ['UK', 'US', 'Either', 'Either', 'US', 'US', 'UK', 'UK'],
+            expected: ['EU', 'US', 'Either', 'Either', 'US', 'US', 'EU', 'EU'],
         },
     ],
 };

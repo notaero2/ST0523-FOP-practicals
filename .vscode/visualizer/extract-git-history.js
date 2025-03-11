@@ -32,7 +32,7 @@ function extractGitCommits() {
     }
 
     commits.sort((a, b) => new Date(a.date) - new Date(b.date));
-    fs.writeFileSync('./visualizer/.commits.json', JSON.stringify(commits, null, 4));
+    fs.writeFileSync('./visualizer/commits.json', JSON.stringify(commits, null, 4));
 
     console.log(`Data saved as JSON`);
 }

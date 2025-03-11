@@ -15,7 +15,7 @@
  * @returns {string} - 'US' if it follows US format, 'EU' if it follows EU format, 'Either' if it can be either.
  *
  * @example
- * dateFormat(12, 30, 2025); // 'UK'
+ * dateFormat(12, 30, 2025); // 'EU'
  * dateFormat(30, 12, 2025); // 'US'
  * dateFormat(12, 12, 2025); // 'Either'
  * dateFormat(1, 1, 2025); // 'Either'
@@ -26,7 +26,7 @@ function dateFormat(AA, BB, CCCC) {}
 // Your own test cases
 // e.g.;
 
-console.log(dateFormat(12, 30, 2025)); // "UK"
+console.log(dateFormat(12, 30, 2025)); // "EU"
 
 // To test your code against the test cases: node run.js q2
 // To test your code against custom input: node ./q2/code.js

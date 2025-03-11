@@ -1,57 +1,57 @@
 /**
- * You are given an array of file names to be saved.
+ * You are writing a program to help someone remember the year of their nth trip
  *
- * Since two files cannot have the same name, if you enter a file name that was previously used,
- * the system will add ONE suffix addition to its name in the form of (k), where, k is the smallest positive integer such that the obtained name remains unique.
- * If the file name to be added already has a suffix, the system will add a new suffix to it instead of overwriting the existing one.
+ * You are given 2 inputs
+ * 1. The place and the year a person travelled to that country, in no particular order
+ *    - Each place is a single word
+ *    - Each year is a 4-digit number
+ *    - Separated by a space
+ * 2. A list of queries, each query is a string that contains the name of the place and a number indicating the nth trip to that place
+ *    - You can safely assume that the queries are valid and the nth trip to a place is always valid
  *
- * @param {string[]} files - An array of strings where each string is a file name.
- * @returns {string[]} - An array of strings where each string is the unique file name after saving.
+ * You are to return an array of numbers where each number is the year of the nth trip to that place
+ *
+ * @param {string[]} trips - An array of strings where each string is the name of the place and the year of the trip
+ * @param {string[]} queries - An array of strings where each string is the name of the place and the nth trip to that place
+ * @returns {number[]} - An array of numbers where each number is the year of the nth trip to that place
  *
  * @example
- * getFilenames(['file', 'file', 'file']);
- * Output: ['file', 'file(1)', 'file(2)']
+ * tripYear(['Paris 2019', 'Paris 2020', 'London 2021'], ['Paris 1', 'Paris 2', 'London 1']);
+ * Output: [2019, 2020, 2021]
  *
- * getFilenames(['onepiece','onepiece(1)','onepiece(2)','onepiece(3)','onepiece'])
- * Output: ['onepiece','onepiece(1)','onepiece(2)','onepiece(3)','onepiece(4)']
+ * tripYear(['Iceland 2016', 'Sweden 2015', 'Iceland 1982', 'Norway 1999'], ['Sweden 1', 'Iceland 1', ' Iceland 2']);
+ * Output: [2015, 1982, 2016]
  *
- * getFilenames(['gta','gta(2)','gta','gta']])
- * Output: ['gta','gta(2)','gta(1)','gta(4)']
- *
- * getFilenames(['pikachu', 'pikachu(1)', 'pikachu(1)', 'pikachu(1)'])
- * Output: ['pikachu', 'pikachu(1)', 'pikachu(1)(1)', 'pikachu(1)(2)']
+ * tripYear(['Japan 2003', 'Japan 2002', 'Japan 2001'], ['Japan 1', 'Japan 2', 'Japan 3']);
+ * Output: [2001, 2002, 2003]
  *
  * @explanation
  * For the first example:
- * - "file" --> not assigned before, remains "file"
- * - "file" --> already assigned, becomes "file(1)"
- * - "file" --> already assigned, system adds (k), since "file(1)" is also assigned, system puts k=2, becoming "file(2)"
+ * - The first query is 'Paris 1', the first trip to Paris was in 2019
+ * - The second query is 'Paris 2', the second trip to Paris was in 2020
+ * - The third query is 'London 1', the first trip to London was in 2021
  *
  * For the second example:
- * - "onepiece" --> not assigned before, remains "onepiece"
- * - "onepiece(1)" --> not assigned before, remains "onepiece(1)"
- * - "onepiece(2)" --> not assigned before, remains "onepiece(2)"
- * - "onepiece(3)" --> not assigned before, remains "onepiece(3)"
- * - "onepiece" --> already assigned, system adds (k), the smallest positive valid k is 4, becoming "onepiece(4)"
+ * - The first query is 'Sweden 1', the first trip to Sweden was in 2015
+ * - The second query is 'Iceland 1', the first trip to Iceland was in 1982
+ * - The third query is 'Iceland 2', the second trip to Iceland was in 2016
  *
  * For the third example:
- * - "gta" --> not assigned before, remains "gta"
- * - "gta(2)" --> not assigned before, remains "gta(2)"
- * - "gta" --> already assigned, system adds (k), the smallest positive valid k is 1, becoming "gta(1)"
- * - "gta" --> already assigned, system adds (k), the smallest positive valid k is 4, becoming "gta(4)"
+ * - The first query is 'Japan 1', the first trip to Japan was in 2001
+ * - The second query is 'Japan 2', the second trip to Japan was in 2002
+ * - The third query is 'Japan 3', the third trip to Japan was in 2003
  *
- * For the fourth example:
- * - "pikachu" --> not assigned before, remains "pikachu"
- * - "pikachu(1)" --> not assigned before, remains "pikachu(1)"
- * - "pikachu(1)" --> already assigned, system adds (k), the smallest positive valid k is 1, becoming "pikachu(1)(1)"
- * - "pikachu(1)" --> already assigned, system adds (k), the smallest positive valid k is 2, becoming "pikachu(1)(2)"
- * Note: When a conflict is found, it does not modify any existing suffix but adds a new suffix.
+ * @hint
+ * You can use .sort() to sort the array
  */
-function getFilenames(files) {}
-
-module.exports = getFilenames;
+function tripYear(trips, queries) {}
 
 // Your own test cases
 // e.g.;
 
-// console.log(tripYear(['Paris 2019', 'Paris 2020', 'London 2021'], ['Paris 1', 'Paris 2', 'London 1']));
+console.log(tripYear(['Paris 2019', 'Paris 2020', 'London 2021'], ['Paris 1', 'Paris 2', 'London 1']));
+
+// To test your code against the test cases: node run.js q3
+// To test your code against custom input: node ./q3/code.js
+
+module.exports = tripYear;

@@ -1,17 +1,18 @@
 module.exports = {
     testcases: [
         {
-            inputs: [['C'], ['G'], ['D'], ['A'], ['E']],
-            expected: [
-                ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
-                ['G', 'A', 'B', 'C', 'D', 'E', 'F#', 'G'],
-                ['D', 'E', 'F#', 'G', 'A', 'B', 'C#', 'D'],
-                ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#', 'A'],
-                ['E', 'F#', 'G#', 'A', 'B', 'C#', 'D#', 'E'],
+            inputs: [
+                [['A', 'A', 'A', 'A', ' ']],
+                [['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', ' ']],
+                [['A', 'B', 'C', 'D', 'D', ' ']],
+                [['A', 'D', 'B', 'B', 'C', 'A', ' ']],
+                [['A', 'D', 'C', 'B', 'C', 'C', 'A', 'C', 'D', 'D', 'A', 'B', 'A', 'A', ' ']],
             ],
+            expected: [3, 5, 1, 1, 3],
         },
     ],
     options: {
-        type: 'JSON',
+        type: 'floating point',
+        precision: 6,
     },
 };

@@ -1,29 +1,27 @@
 /**
- * You are given an array of positive integers which represents a sequence of jumps.
- * Each element in the array represents the index of the array (0-based) to jump to.
- * You start at the 0th index.
- * Jumping out of bounds will end the sequence.
- * A cycle is formed if you jump to an index you've already visited.
- * Find out if the sequence of jumps forms a cycle.
+ * Given a string, find the length of the longest substring without repeating characters.
  *
- * @param {number[]} jumps - An array of numbers where each element represents the index to jump to.
- * @returns {boolean} - Whether the sequence of jumps forms a cycle.
+ * @param {string} string - The input string.
+ * @returns {number} - The length of the longest substring without repeating characters.
  *
  * @example
- * detectCycle([1, 2, 0]); // true
- * detectCycle([1, 2, 1]); // true
- * detectCycle([2, 1, 4, 1, 9]); // false
- * detectCycle([2, 4, 1, 6, 3, 9, 5]); // false
- * detectCycle([2, 4, 1, 6, 3, 0, 5]); // true
+ * longestSubstringWithoutRepeats('abcabcbb'); // 3
+ * longestSubstringWithoutRepeats('bbbbb'); // 1
+ * longestSubstringWithoutRepeats('pwwkew'); // 3
+ *
+ * @explanation
+ * For the first example, the longest substring without repeating characters is 'abc', which has a length of 3.
+ * For the second example, the longest substring without repeating characters is 'b', which has a length of 1.
+ * For the third example, the longest substring without repeating characters is 'wke or 'kew', both which has a length of 3.
  */
-function detectCycle(jumps) {}
+function longestSubstringWithoutRepeats(string) {}
 
 // Your own test cases
 // e.g.;
 
-console.log(detectCycle([1, 2, 0])); // true
+console.log(longestSubstringWithoutRepeats('abcabcbb'));
 
 // To test your code against the test cases: node run.js q4
 // To test your code against custom input: node ./q4/code.js
 
-module.exports = detectCycle;
+module.exports = longestSubstringWithoutRepeats;

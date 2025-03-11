@@ -1,25 +1,25 @@
 /**
- * Given 2 string, string1 and string2, find the smallest sum of 0 based index of the common characters in both strings.
- * If there are no common characters, return -1.
+ * Sum the digits of a number
  *
- * @param {string} string1
- * @param {string} string2
+ * @param {number} n - The number to sum the digits of
  *
- * @returns {number} - The smallest sum of index of the common characters in both strings.
+ * @returns {number} - The sum of the digits of the number
  *
  * @example
- * earliestCommonCharacter('hello', 'world'); // o --> 4 + 1 = 5
- * earliestCommonCharacter('abbbbba', 'bbba'); // b --> 1 + 0 = 1
- * earliestCommonCharacter('abc', 'def'); // -1
+ * digitSum(12345); // 1 + 2 + 3 + 4 + 5 = 15
+ * digitSum(0); // 0
+ * digitSum(2025); // 2 + 0 + 2 + 5 = 9
+ *
+ * Hint: You can access the nth digit of a number by dividing it by 10**(n-1) and taking the remainder when divided by 10.
  */
-function earliestCommonCharacter(string1, string2) {}
+function digitSum(n) {}
 
 // Your own test cases
 // e.g.;
 
-console.log(earliestCommonCharacter('hello', 'world'));
+console.log(digitSum(12345));
 
 // To test your code against the test cases: node run.js q5
 // To test your code against custom input: node ./q5/code.js
 
-module.exports = earliestCommonCharacter;
+module.exports = digitSum;

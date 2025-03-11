@@ -3,8 +3,8 @@
  *
  * Determine if the circular poster can cover up the rectangular poster completely.
  *
- * A circular poster can cover up a rectangular poster
- * if the diameter of the circular poster is greater than or equal to the diagonal of the rectangular poster.
+ * A circular poster can cover up a rectangular poster if
+ * the diameter of the circular poster is greater than or equal to the diagonal of the rectangular poster.
  * You can find the diagonal using the pythagorean theorem
  *
  * @param {number} R - The radius of the circular poster
@@ -19,11 +19,7 @@
  * canCoverPoster(4, 1, 30); // false
  *
  */
-function canCoverPoster(R, W, H) {
-    // Write your code here
-    var diagonal = Math.sqrt(Math.pow(W, 2) + Math.pow(H, 2));
-    return R * 2 >= diagonal;
-}
+function canCoverPoster(R, W, H) {}
 
 console.log(canCoverPoster(2.5, 3, 4)); // true
 

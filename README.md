@@ -19,6 +19,7 @@ Quick start without downloading:
 
 ## Table of Content
 
+-   Set 1 - Introduction
 -   Set 2 - Operators
 -   Set 3 - Functions
 -   Set 4 - Selections (If-else)

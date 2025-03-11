@@ -3,6 +3,7 @@ module.exports = {
         {
             inputs: [
                 [['def a 1', 'def b 2', 'def c 3', 'calc a + b']],
+                [['def a 1', 'def b 2', 'def c 4', 'calc a + b']],
                 [
                     [
                         'def foo 3',
@@ -11,6 +12,20 @@ module.exports = {
                         'def programming 10',
                         'calc foo + bar',
                         'def is 4',
+                        'def fun 8',
+                        'calc programming - is + fun',
+                        'def fun 1',
+                        'calc programming - is + fun',
+                    ],
+                ],
+                [
+                    [
+                        'def foo 5',
+                        'calc foo + bar',
+                        'def bar 7',
+                        'def programming 12',
+                        'calc foo + bar',
+                        'def is 6',
                         'def fun 8',
                         'calc programming - is + fun',
                         'def fun 1',
@@ -38,6 +53,8 @@ module.exports = {
             ],
             expected: [
                 ['c'],
+                ['unknown'],
+                ['invalid', 'programming', 'unknown', 'bar'],
                 ['invalid', 'programming', 'unknown', 'bar'],
                 ['unknown', 'invalid', 'foobar', 'programming', 'programming', 'foo'],
             ],

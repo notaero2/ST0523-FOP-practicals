@@ -42,6 +42,9 @@ Quick start without downloading:
     - Run `node ./q#/code.js` replace # with the question number.
     - e.g. `node ./q4/code.js`
 5. Do not modify the `testcases.js` of each question.
+6. Alternatively, you can run from the root:
+    - `node run p# q#` - to run a specific question in a problem set (e.g. `node run p3 q3`)
+    - `node run p#` - to run all question in a problem set (e.g. `node run p4`)
 
 ## Visualizing effort
 

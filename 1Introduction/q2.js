@@ -1,14 +1,11 @@
 /**
- * 2 - Add comment to each line, explaining what it is doing
- *
- * Pay attention to the sequence of what happens in each line
- *
+ * 2 - Fill in your height and weight to get your BMI.
  */
 
-let oldTax = 6;
-let newTax = 10.7;
-oldTax = newTax;
+const height;
+const weight;
+const bmi = height / weight / weight;
 
-console.log(newTax);
-console.log(oldTax);
-console.log(typeof oldTax);
+console.log('height', height, typeof height);
+console.log('weight', weight, typeof weight);
+console.log('bmi', bmi, typeof bmi);

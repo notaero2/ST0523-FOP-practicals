@@ -38,13 +38,14 @@ module.exports = {
     ],
     options: {
         type: 'JSON',
-        monkeyPatch: () => {
+        monkeyPatch: (fn) => {
             Array.prototype.sort = function () {
                 throw new Error('Array.sort() is disabled!');
             };
             Array.prototype.toSorted = function () {
                 throw new Error('Array.sort() is disabled!');
             };
+            return fn;
         },
     },
 };

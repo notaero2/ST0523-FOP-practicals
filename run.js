@@ -8,7 +8,11 @@ const folders = fs.readdirSync(__dirname, { withFileTypes: true }).filter((diren
 const folderNames = folders
     .map((dirent) => dirent.name)
     .filter((name) => /^\d+[A-Z].*$/.test(name))
-    .sort(); // Sort the folders
+    .sort((nameA, nameB) => {
+        const [_, A] = /^(\d+)[A-Z].*$/.exec(nameA);
+        const [__, B] = /^(\d+)[A-Z].*$/.exec(nameB);
+        return +A - +B;
+    }); // Sort the folders
 
 function readProblemSetInput() {
     // Check for folder argument
@@ -94,6 +98,16 @@ function silentRequire(codePath) {
     return runCode;
 }
 
+function silentRunCode(runCode) {
+    return (...args) => {
+        const originalLog = console.log;
+        console.log = () => {};
+        const result = runCode(...args);
+        console.log = originalLog;
+        return result;
+    };
+}
+
 function deepEqual(a, b) {
     if (a === b) return true;
 
@@ -154,12 +168,14 @@ function runQuestions() {
 
     const allResults = questions.map((question) => {
         const { codePath, testCasesPath } = getCodeAndTestCasesPath(problemSet, question);
-        const runCode = silentRequire(codePath);
+        let runCode = silentRequire(codePath);
         const { testcases, options = {} } = require(testCasesPath); // Destructure testcases and options
 
         if (options.monkeyPatch) {
-            options.monkeyPatch(runCode);
+            runCode = options.monkeyPatch(runCode);
         }
+
+        runCode = silentRunCode(runCode);
 
         // Run the test cases
         const results = runTestCases(runCode, testcases, options);

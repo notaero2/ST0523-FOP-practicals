@@ -1,4 +1,6 @@
 /**
+ * Reference: https://www.reddit.com/r/SingaporePoly/s/NUA8vrbBan
+ *
  * This function calculates the GPA needed for the remaining credits to be fulfilled to achieve the target GPA
  * @param {number} gpa - The current GPA
  * @param {number} creditsFulfilled - The number of credits already fulfilled

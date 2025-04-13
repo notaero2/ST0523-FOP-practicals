@@ -136,17 +136,14 @@ function compareResults(result, expected, options) {
 // Function to run the test cases
 function runTestCases(runCode, testcases, options) {
     return testcases.map((testCase, testIndex) => {
-        const { inputs, expected: expecteds } = testCase;
-        return inputs.map((input, index) => {
-            const expected = expecteds[index];
-            try {
-                const result = runCode(...input);
-                const passed = compareResults(result, expected, options);
-                return { testIndex, index, passed, expected, actual: result };
-            } catch (error) {
-                return { testIndex, index, error: error };
-            }
-        });
+        const { input, expected } = testCase;
+        try {
+            const result = runCode(...input);
+            const passed = compareResults(result, expected, options);
+            return { testIndex, passed, expected, actual: result };
+        } catch (error) {
+            return { testIndex, error: error };
+        }
     });
 }
 
@@ -184,31 +181,25 @@ function runQuestions() {
 
     allResults.forEach(({ question, results }) => {
         console.log(`${problemSet}/${question}`);
-        results.forEach((result) => {
-            result.forEach((testCase) => {
-                if (testCase.error) {
-                    console.error(
-                        `\tTest case ${testCase.testIndex + 1}.${testCase.index + 1}: Error - ${
-                            testCase.error.message
-                        }`,
-                    );
-                } else if (testCase.passed) {
-                    console.log(`\tTest case ${testCase.testIndex + 1}.${testCase.index + 1}: Passed`);
-                } else {
-                    console.log(
-                        `\tTest case ${testCase.testIndex + 1}.${testCase.index + 1}: Failed (Expected: ${
-                            testCase.expected
-                        }, Got: ${testCase.actual})`,
-                    );
-                }
-            });
+        results.forEach((testCase) => {
+            if (testCase.error) {
+                console.error(`\tTest case ${testCase.testIndex + 1}: Error - ${testCase.error.message}`);
+            } else if (testCase.passed) {
+                console.log(`\tTest case ${testCase.testIndex + 1}: Passed`);
+            } else {
+                console.log(
+                    `\tTest case ${testCase.testIndex + 1}: Failed (Expected: ${testCase.expected}, Got: ${
+                        testCase.actual
+                    })`,
+                );
+            }
         });
     });
 
     console.table(
         allResults.map(({ question, results }) => {
-            const totalQuestions = results.map((result) => result.length).reduce((acc, val) => acc + val, 0);
-            const failed = results.map((result) => result.filter((testCase) => !testCase.passed)).flat().length;
+            const totalQuestions = results.length;
+            const failed = results.filter((testCase) => !testCase.passed).flat().length;
             const passed = totalQuestions - failed;
             return { question, passed, failed, totalQuestions };
         }),

@@ -1,26 +1,37 @@
 module.exports = {
     testcases: [
         {
-            inputs: [
-                ['RSTEEOTCP'],
-                ['eedARBtVrolsiesuAoReerles'],
-                ['EarSvyeqeBsuneMa'],
-                ['741852963'],
-                ['3142'],
-                ['a'],
-                ['aAaaAaaAa'],
-                ['AAAAaAAAA'],
-            ],
-            expected: [
-                'TOPSECRET',
-                'RosesAreRedVioletsAreBlue',
-                'SquaresMayBeEven',
-                '123456789',
-                '1234',
-                'a',
-                'aaaAAAaaa',
-                'AAAAaAAAA',
-            ],
+            input: ['RSTEEOTCP'],
+            expected: 'TOPSECRET',
+        },
+        {
+            input: ['eedARBtVrolsiesuAoReerles'],
+            expected: 'RosesAreRedVioletsAreBlue',
+        },
+        {
+            input: ['EarSvyeqeBsuneMa'],
+            expected: 'SquaresMayBeEven',
+        },
+        {
+            input: ['741852963'],
+            expected: '123456789',
+        },
+        {
+            input: ['3142'],
+            expected: '1234',
+        },
+        {
+            input: ['a'],
+            expected: 'a',
+        },
+        {
+            input: ['aAaaAaaAa'],
+            expected: 'aaaAAAaaa',
+        },
+        {
+            input: ['AAAAaAAAA'],
+            expected: 'AAAAaAAAA',
         },
     ],
+    options: {},
 };

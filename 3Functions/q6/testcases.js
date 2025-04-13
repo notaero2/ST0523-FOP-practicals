@@ -1,15 +1,28 @@
 module.exports = {
     testcases: [
         {
-            inputs: [
-                [1, 52],
-                [10, 8],
-                [42, 19],
-                [50, 12],
-                [50, 24],
-                [13, 13],
-            ],
-            expected: [true, false, false, true, true, false],
+            input: [1, 52],
+            expected: true,
+        },
+        {
+            input: [10, 8],
+            expected: false,
+        },
+        {
+            input: [42, 19],
+            expected: false,
+        },
+        {
+            input: [50, 12],
+            expected: true,
+        },
+        {
+            input: [50, 24],
+            expected: true,
+        },
+        {
+            input: [13, 13],
+            expected: false,
         },
     ],
     options: {

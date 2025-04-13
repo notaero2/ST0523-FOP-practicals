@@ -1,22 +1,37 @@
 module.exports = {
-  testcases: [
-    {
-      inputs: [
-        [1, 2],
-        [1, '2'],
-        ['1', 2],
-        ['1', '2'],
-      ],
-      expected: [3, 3, 3, 3],
-    },
-    {
-      inputs: [
-        [13, 25],
-        [91, '29'],
-        ['37', 54],
-        ['10', '20'],
-      ],
-      expected: [38, 120, 91, 30],
-    },
-  ],
+    testcases: [
+        {
+            input: [1, 2],
+            expected: 3,
+        },
+        {
+            input: [1, '2'],
+            expected: 3,
+        },
+        {
+            input: ['1', 2],
+            expected: 3,
+        },
+        {
+            input: ['1', '2'],
+            expected: 3,
+        },
+        {
+            input: [13, 25],
+            expected: 38,
+        },
+        {
+            input: [91, '29'],
+            expected: 120,
+        },
+        {
+            input: ['37', 54],
+            expected: 91,
+        },
+        {
+            input: ['10', '20'],
+            expected: 30,
+        },
+    ],
+    options: {},
 };

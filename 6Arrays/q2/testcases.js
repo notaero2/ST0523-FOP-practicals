@@ -1,14 +1,24 @@
 module.exports = {
     testcases: [
         {
-            inputs: [
-                [['A', 'A', 'A', 'A', ' ']],
-                [['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', ' ']],
-                [['A', 'B', 'C', 'D', 'D', ' ']],
-                [['A', 'D', 'B', 'B', 'C', 'A', ' ']],
-                [['A', 'D', 'C', 'B', 'C', 'C', 'A', 'C', 'D', 'D', 'A', 'B', 'A', 'A', ' ']],
-            ],
-            expected: [3, 5, 1, 1, 3],
+            input: [['A', 'A', 'A', 'A', ' ']],
+            expected: 3,
+        },
+        {
+            input: [['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', ' ']],
+            expected: 5,
+        },
+        {
+            input: [['A', 'B', 'C', 'D', 'D', ' ']],
+            expected: 1,
+        },
+        {
+            input: [['A', 'D', 'B', 'B', 'C', 'A', ' ']],
+            expected: 1,
+        },
+        {
+            input: [['A', 'D', 'C', 'B', 'C', 'C', 'A', 'C', 'D', 'D', 'A', 'B', 'A', 'A', ' ']],
+            expected: 3,
         },
     ],
     options: {

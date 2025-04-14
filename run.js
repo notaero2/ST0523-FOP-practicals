@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const util = require('util');
 
 // Get all folders in the current directory
 const folders = fs.readdirSync(__dirname, { withFileTypes: true }).filter((dirent) => dirent.isDirectory());
@@ -140,7 +141,7 @@ function runTestCases(runCode, testcases, options) {
         try {
             const result = runCode(...input);
             const passed = compareResults(result, expected, options);
-            return { testIndex, passed, expected, actual: result };
+            return { testIndex, passed, input, expected, actual: result };
         } catch (error) {
             return { testIndex, error: error };
         }
@@ -188,10 +189,19 @@ function runQuestions() {
                 console.log(`\tTest case ${testCase.testIndex + 1}: Passed`);
             } else {
                 console.log(
-                    `\tTest case ${testCase.testIndex + 1}: Failed (Expected: ${testCase.expected}, Got: ${
-                        testCase.actual
-                    })`,
+                    `\tTest case ${testCase.testIndex + 1}: Failed (Expected: ${JSON.stringify(
+                        testCase.expected,
+                    )}, Got: ${testCase.actual})`,
                 );
+                let str = util.inspect(testCase.input, {
+                    depth: 2,
+                    maxArrayLength: 7,
+                    breakLength: 80,
+                    compact: 5,
+                    showHidden: false,
+                });
+                console.log('\tInputs:\n\t\t' + str.split('\n').join('\n\t\t'));
+                console.log();
             }
         });
     });

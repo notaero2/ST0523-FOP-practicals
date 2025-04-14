@@ -191,7 +191,7 @@ function runQuestions() {
                 console.log(
                     `\tTest case ${testCase.testIndex + 1}: Failed (Expected: ${JSON.stringify(
                         testCase.expected,
-                    )}, Got: ${testCase.actual})`,
+                    )}, Got: ${JSON.stringify(testCase.actual)})`,
                 );
                 let str = util.inspect(testCase.input, {
                     depth: 2,

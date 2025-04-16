@@ -20,13 +20,13 @@
  * In the third example, the student has a GPA of 2.07 and has fulfilled 29 credits. They need a GPA of 3.5 for the remaining 220 - 29 = 191 credits to achieve a target GPA of 3.14.
  *
  * @hint
- * You can round to .5 by first multiplying by 2, round it up, then divide by 2 again
- * e.g. 3.4 * 2 = 6.8
- *      rounded up = 7
- *      divide by 2 = 3.5
+ * A helper function is given to round to the nearest grade.
  */
 function toGetTargetGPA(gpa, creditsFulfilled, totalCredits, targetGPA) {}
 
+function roundToNearestGrade(gradePoint) {
+    return Math.ceil(gradePoint * 2) / 2;
+}
 // Your own test cases
 // e.g.;
 

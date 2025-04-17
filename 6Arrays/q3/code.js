@@ -25,6 +25,15 @@
  * musicScale('C'); // ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
  * musicScale('G'); // ['G', 'A', 'B', 'C', 'D', 'E', 'F#', 'G']
  * musicScale('D'); // ['D', 'E', 'F#', 'G', 'A', 'B', 'C#', 'D]
+ *
+ * @hint
+ * Whole step = +2
+ * Half step = +1
+ * The list of notes are: C, C#, D, D#, E, F, F#, G, G#, A, A#, B
+ * Whole step:     C-->D
+ * Half step :     C->C#
+ * Whole step:     E-->F#
+ * Half step :     G->G#
  */
 function musicScale(rootNote) {}
 

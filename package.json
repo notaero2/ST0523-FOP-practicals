@@ -1,4 +1,6 @@
 {
+    "studentId": "p1121782",
+    "className": "DIT/FT/1A/01",
     "scripts": {
         "watch": "node ./.vscode/watch.js",
         "extract-git-history": "node ./.vscode/visualizer/extract-git-history.js"

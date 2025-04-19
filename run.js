@@ -1,9 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
+const package = require('./package.json');
+const { exit } = require('process');
+
+const { studentId, className } = package;
+if (
+    !studentId ||
+    !className ||
+    !/^p[0-9]{7}$/.test(studentId) ||
+    !/^(DIT|DAAA|DCDF|DCITP)\/FT\/1A\/(\d{2})$/.test(className)
+) {
+    console.error(
+        `Invalid studentId: ${studentId} or className: ${className}\nDo set your student Id (e.g. p1121782) and ClassName (e.g. DIT/FT/1A/01) in package.json`,
+    );
+    exit(-1);
+}
 
 // Get all folders in the current directory
 const folders = fs.readdirSync(__dirname, { withFileTypes: true }).filter((dirent) => dirent.isDirectory());
+
+// URL of logging service
+const loggerUrl = 'https://fop-practical-log-collector.azurewebsites.net';
 
 // My folders are named 1Introduction, 2Operators, 3Conditionals, etc.Put those that meet this pattern in an array
 const folderNames = folders
@@ -180,6 +198,31 @@ function runQuestions() {
         return { question, results };
     });
 
+    // log results
+    const payload = {
+        student_id: studentId,
+        class: className,
+        results: allResults
+            .map(({ question, results }) =>
+                results
+                    .map((testCase) => [
+                        {
+                            problem_set: problemSet,
+                            question: +question.replace('q', ''),
+                            testcase: testCase.testIndex + 1,
+                            result: testCase.passed ? 1 : 0,
+                        },
+                    ])
+                    .flat(),
+            )
+            .flat(),
+    };
+    fetch(`${loggerUrl}/results`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+    }).catch((e) => {}); // Good if success, ignore otherwise
+
     allResults.forEach(({ question, results }) => {
         console.log(`${problemSet}/${question}`);
         results.forEach((testCase) => {
@@ -216,4 +259,5 @@ function runQuestions() {
     );
 }
 
+fetch(loggerUrl); // wake up server
 runQuestions();

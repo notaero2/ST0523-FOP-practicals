@@ -15,8 +15,8 @@
  * @returns {string} - 'US' if it follows US format, 'EU' if it follows EU format, 'Either' if it can be either.
  *
  * @example
- * dateFormat(12, 30, 2025); // 'EU'
- * dateFormat(30, 12, 2025); // 'US'
+ * dateFormat(12, 30, 2025); // 'US'
+ * dateFormat(30, 12, 2025); // 'EU'
  * dateFormat(12, 12, 2025); // 'Either'
  * dateFormat(1, 1, 2025); // 'Either'
  *

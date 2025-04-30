@@ -14,7 +14,23 @@
  *
  * Given a coordinate, determine which quadrant it is in.
  */
-function whichQuadrant(x, y) {}
+function whichQuadrant(x, y) {
+    if (x == 0 || y == 0) {
+        return "error"
+    } else if (x > 0) {
+        if (y > 0) {
+            return 1
+        } else {
+            return 4
+        }
+    } else {
+        if (y > 0) {
+            return 2
+        } else {
+            return 3
+        }
+    }
+}
 
 // Your own test cases
 // e.g.;

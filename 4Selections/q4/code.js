@@ -23,7 +23,20 @@
  * chickens(10, 11); // 'You have a surplus of 1 chicken'
  *
  */
-function chickens(required, available) {}
+function chickens(required, available) {
+    let surplus = available - required
+    let pluranator = ''
+    if (surplus != 1 && surplus != -1) {
+        pluranator = 's'
+    }
+    if (surplus == 0) {
+        return "Enough"
+    } else if (surplus > 0) {
+        return 'You have a surplus of ' + String(surplus) + ' chicken' + pluranator
+    } else {
+        return 'You lack ' + String(-surplus) + ' chicken' + pluranator
+    }
+}
 
 // Your own test cases
 // e.g.;

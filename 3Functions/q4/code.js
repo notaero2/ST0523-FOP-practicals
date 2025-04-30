@@ -19,7 +19,10 @@
  * canCoverPoster(4, 1, 30); // false
  *
  */
-function canCoverPoster(R, W, H) {}
+function canCoverPoster(R, W, H) {
+    let diag = (W**2 + H**2)**0.5;
+    return 2*R >= diag;
+}
 
 console.log(canCoverPoster(2.5, 3, 4)); // true
 

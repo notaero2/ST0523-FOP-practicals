@@ -25,7 +25,18 @@
  *     => "3 * 1 = 3\n3 * 2 = 6\n3 * 3 = 9\n3 * 4 = 12\n3 * 5 = 15\n"
  *
  */
-function multiplicationTable(n, m) {}
+function multiplicationTable(n, m) {
+    let out = ""
+    for (let k = 1; k <= m; k++) {
+        out += String(n)
+        out += " * "
+        out += String(k)
+        out += " = "
+        out += String(n*k)
+        out += "\n"
+    }
+    return out
+}
 
 // Your own test cases
 // e.g.;

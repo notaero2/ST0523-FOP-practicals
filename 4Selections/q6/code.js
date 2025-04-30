@@ -23,7 +23,41 @@
  * This question focuses on calling functions and checking their returned value.
  * There is no obscure hidden edge cases.
  */
-function isCorrect(fn) {}
+function isCorrect(fn) {
+    let check = 1
+    let reset = -999999999999999
+    let nos = [reset, reset]
+    let val = 1
+
+    //generating many testcases and comparing them
+    while (nos[1] <= -reset) {
+        nos[0] = reset
+        while (nos[0] <= -reset) {
+            val = fn(nos[0], nos[1])
+
+            if (nos[0] > nos[1]) {
+                check = 1
+            } else if (nos[1] > nos[0]) {
+                check = -1
+            } else {
+                check = 0
+            }
+            if ((check === 0 || val === 0) && check !== val) {
+                return false
+            } else {
+                check = Math.abs(Number(val)) * check
+                if (!(check === val)) {
+                    return false
+                }
+            }
+
+            nos[0] += 1
+        }
+        nos[1] += 1
+    }
+
+    return true
+}
 
 // Your own test cases
 // e.g.;

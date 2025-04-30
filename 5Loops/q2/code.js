@@ -23,7 +23,20 @@
  * fibonacci(7); // 8
  * fibonacci(10); // 34
  */
-function fibonacci(n) {}
+function fibonacci(n) {
+    let output = -1
+    let fibs = [0, 1]
+    if (n >= 1) {
+        if (n >= 3) {
+            for (let k = 3; k <= n; k++) {
+                fibs.push(fibs[k-3] + fibs[k-2])
+            }
+        }
+
+        output = fibs[n-1]
+    }
+    return output
+}
 
 // Your own test cases
 // e.g.;

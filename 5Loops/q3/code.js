@@ -15,7 +15,19 @@
  * pi(8);   // 3.017071817071818    => 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 - 1/15)
  * pi(10);  // 3.0418396189294032   => 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 - 1/15 + 1/17 - 1/19)
  */
-function pi(numberOfFractions) {}
+function pi(numberOfFractions) {
+    if (numberOfFractions < 1) {
+        return "Error"
+    }
+    let result = 1
+    let multiplier = -1
+    for (let k = 1; k <= numberOfFractions - 1; k++) {
+        result += multiplier/(1 + k * 2)
+        multiplier *= -1
+    }
+
+    return 4 * result
+}
 
 // Your own test cases
 // e.g.;

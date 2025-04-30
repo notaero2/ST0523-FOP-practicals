@@ -51,7 +51,22 @@
  *  south -> east
  *  east -> north
  */
-function canProceed(currentPosition, targetPosition, incomingVehiclePosition) {}
+function canProceed(currentPosition, targetPosition, incomingVehiclePosition) {
+    let action = "Stop"
+    let proceeding = false
+    let right = {"north": "west", "west": "south", "south": "east", "east": "north"}
+
+    if (targetPosition == right[currentPosition]) { //turning right
+        proceeding = false
+    } else { //turning left or going straight
+        proceeding = !(incomingVehiclePosition == right[currentPosition])
+    }
+
+    if (proceeding) {
+        action = "Proceed"
+    }
+    return action
+}
 
 // Your own test cases
 // e.g.;

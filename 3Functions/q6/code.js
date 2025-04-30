@@ -44,7 +44,29 @@
  *
  * Math.abs(x) returns the absolute number (e.g. Math.abs(-1) = 1)
  */
-function inbetween() {}
+function inbetween() {
+    let x = Math.floor((Math.random() * 52)) + 1
+    let y = Math.floor((Math.random() * 52)) + 1
+    let smaller = -1
+    let larger = -1
+    if (x == y) {
+        return false
+    } else if (x > y) {
+        smaller = y
+        bigger = x
+    } else {
+        smaller = x
+        bigger = y
+    }
+    let win = []
+    for (let k = 1; k <= 52; k++) {
+        if (k < bigger && k > smaller) {
+            win.push(k)
+        }
+    }
+    let chance = win.length * 2 //There are 50 cards, so percentage chance = ((number of winning cards) * 2)%
+    return chance >= 50
+}
 
 console.log(inbetween());
 

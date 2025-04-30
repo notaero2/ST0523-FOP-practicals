@@ -11,7 +11,17 @@
  *
  * This time, use if-else instead of && and ||.
  */
-function foobar(number) {}
+function foobar(number) {
+    if (number % 15 == 0) { //divisible by both 3 and 5 = divisible by 15
+        return "foobar"
+    } else if (number % 3 == 0) {
+        return "foo"
+    } else if (number % 5 == 0) {
+        return "bar"
+    } else {
+        return number
+    }
+}
 
 // Your own test cases
 // e.g.;

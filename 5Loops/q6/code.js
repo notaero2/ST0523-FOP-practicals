@@ -25,7 +25,27 @@
  * In the last example, everything is bar, but only 20 should be bar, hence 9 out of 10 is wrong, 0.8 error rate.
  *
  */
-function isFooBarCorrect(foobar, x, y) {}
+function isFooBarCorrect(foobar, x, y) {
+    let total = y - x + 1
+    let out = 1
+    let err = 0
+    let correct = true
+    for (let k = x; k <= y; k++) {
+        correct = true
+        out = foobar(k)
+        if (k % 15 === 0 && out !== "foobar") {
+            correct = false
+        } else if ((k % 5 === 0 && out !== "bar") || (k % 3 === 0 && out !== "foo")) {
+            correct = false
+        } else {
+            correct = (k === out)
+        }
+        if (!correct) {
+            err += 1
+        }
+    }
+    return err/total
+}
 
 // Your own test cases
 // e.g.;

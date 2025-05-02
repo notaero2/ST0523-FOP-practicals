@@ -12,7 +12,20 @@
  *
  * Hint: You can access the nth digit of a number by dividing it by 10**(n-1) and taking the remainder when divided by 10.
  */
-function digitSum(n) {}
+function digitSum(n) {
+    let total = 0
+    let digit = 0
+    let digitNo = 1
+    let intDivide = n / 10**(digitNo-1)
+    while (intDivide >= 1) {
+        digit =  parseInt(intDivide) % 10
+        total += digit
+
+        digitNo += 1
+        intDivide = n / 10**(digitNo-1)
+    }
+    return total
+}
 
 // Your own test cases
 // e.g.;

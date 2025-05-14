@@ -4,6 +4,12 @@ const util = require('util');
 const package = require('./package.json');
 const { exit } = require('process');
 
+//create file
+fs.open('index.html', 'w', function (err, file) {
+    if (err) throw err;
+    console.log('Saved!');
+});
+
 const { studentId, className } = package;
 if (
     !studentId ||

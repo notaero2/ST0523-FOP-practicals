@@ -4,11 +4,25 @@ const util = require('util');
 const package = require('./package.json');
 const { exit } = require('process');
 
-//create file
+// create file
 fs.open('index.html', 'w', function (err, file) {
     if (err) throw err;
-    console.log('Saved!');
+    //console.log('Saved!');
 });
+
+
+// function for writing file
+function writeToFile(scr) {
+    fs.writeFile('index.html', scr, function (err) {
+        if (err) throw err;
+        //console.log('Replaced!');
+    });
+}
+
+// variable for html file content
+const htmlDefStart = '<!DOCTYPE html><html><body>'
+const htmlDefend = '</body></html>'
+var cont = ''
 
 const { studentId, className } = package;
 if (
@@ -205,6 +219,7 @@ function runQuestions() {
     });
 
     // log results
+    cont = ''
     const payload = {
         student_id: studentId,
         class: className,

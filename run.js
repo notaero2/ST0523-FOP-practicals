@@ -21,7 +21,7 @@ function writeToFile(scr) {
 
 // variable for html file content
 const htmlDefStart = '<!DOCTYPE html><html><body>'
-const htmlDefend = '</body></html>'
+const htmlDefEnd = '</body></html>'
 var cont = ''
 
 const { studentId, className } = package;

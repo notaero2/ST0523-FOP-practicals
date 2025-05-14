@@ -22,6 +22,7 @@ function writeToFile(scr) {
 // variable for html file content
 const htmlDefStart = '<!DOCTYPE html><html><body>'
 const htmlDefEnd = '</body></html>'
+const htmlTableStart = '<table><tr><th>Testcase #</th><th>Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>'
 var cont = ''
 
 const { studentId, className } = package;
@@ -220,6 +221,7 @@ function runQuestions() {
 
     // log results
     cont = ''
+    let tableCont = [1, ['input'], 'Error', 'expected', 'actual'] //initialise table content(testcase no, input, result, expected, actual)
     const payload = {
         student_id: studentId,
         class: className,
@@ -245,18 +247,29 @@ function runQuestions() {
     }).catch((e) => {}); // Good if success, ignore otherwise
 
     allResults.forEach(({ question, results }) => {
+        cont += htmlTableStart
         console.log(`${problemSet}/${question}`);
         results.forEach((testCase) => {
+            cont += '<tr><td>'
+            tableCont[0] = testCase.testIndex + 1
+            tableCont[1] = testCase.input
+            tableCont[3] = testCase.expected
             if (testCase.error) {
                 console.error(`\tTest case ${testCase.testIndex + 1}: Error - ${testCase.error.message}`);
+                tableCont[2] = 'Error'
+                tableCont[4] = 'ERROR: ' + testCase.error.message
             } else if (testCase.passed) {
                 console.log(`\tTest case ${testCase.testIndex + 1}: Passed`);
+                tableCont[2] = 'Passed'
+                tableCont[4] = testCase.actual
             } else {
                 console.log(
                     `\tTest case ${testCase.testIndex + 1}: Failed (Expected: ${JSON.stringify(
                         testCase.expected,
                     )}, Got: ${JSON.stringify(testCase.actual)})`,
                 );
+                tableCont[2] = 'Failed'
+                tableCont[4] = testCase.actual
                 let str = util.inspect(testCase.input, {
                     depth: 2,
                     maxArrayLength: 7,
@@ -267,7 +280,10 @@ function runQuestions() {
                 console.log('\tInputs:\n\t\t' + str.split('\n').join('\n\t\t'));
                 console.log();
             }
+            cont += tableCont.join("</td><td>");
+            cont += '</tr>'
         });
+        cont += '</table>'
     });
 
     console.table(
@@ -278,6 +294,7 @@ function runQuestions() {
             return { question, passed, failed, totalQuestions };
         }),
     );
+    writeToFile(htmlDefStart + cont + htmlDefEnd)
 }
 
 fetch(loggerUrl); // wake up server

@@ -20,7 +20,7 @@ function writeToFile(scr) {
 }
 
 // variable for html file content
-const htmlDefStart = '<!DOCTYPE html><html><body>'
+const htmlDefStart = '<!DOCTYPE html><html><head><link rel="stylesheet" href="styles.css"></head><body>'
 const htmlDefEnd = '</body></html>'
 const htmlTableStart = '<table><tr><th>Testcase #</th><th>Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>'
 var cont = ''

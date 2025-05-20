@@ -19,11 +19,10 @@ function writeToFile(scr) {
     });
 }
 
-// variable for html file content
+// constants for html file content
 const htmlDefStart = '<!DOCTYPE html><html><head><link rel="stylesheet" href="styles.css"></head><body>'
 const htmlDefEnd = '</body></html>'
 const htmlTableStart = '<table><tr><th>Testcase #</th><th>Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>'
-var cont = ''
 
 const { studentId, className } = package;
 if (
@@ -220,7 +219,7 @@ function runQuestions() {
     });
 
     // log results
-    cont = ''
+    let cont = ''
     let tableCont = [1, ['input'], 'Error', 'expected', 'actual'] //initialise table content(testcase no, input, result, expected, actual)
     const payload = {
         student_id: studentId,

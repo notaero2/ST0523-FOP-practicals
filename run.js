@@ -246,6 +246,7 @@ function runQuestions() {
     }).catch((e) => {}); // Good if success, ignore otherwise
 
     allResults.forEach(({ question, results }) => {
+        cont += `<h1>Question ${question.slice(1)}</h1>`
         cont += htmlTableStart
         console.log(`${problemSet}/${question}`);
         results.forEach((testCase) => {

@@ -246,30 +246,18 @@ function runQuestions() {
     }).catch((e) => {}); // Good if success, ignore otherwise
 
     allResults.forEach(({ question, results }) => {
-        cont += `<h1>Question ${question.slice(1)}</h1>`
-        cont += htmlTableStart
         console.log(`${problemSet}/${question}`);
         results.forEach((testCase) => {
-            cont += '<tr><td>'
-            tableCont[0] = testCase.testIndex + 1
-            tableCont[1] = testCase.input
-            tableCont[3] = testCase.expected
             if (testCase.error) {
                 console.error(`\tTest case ${testCase.testIndex + 1}: Error - ${testCase.error.message}`);
-                tableCont[2] = 'Error'
-                tableCont[4] = 'ERROR: ' + testCase.error.message
             } else if (testCase.passed) {
                 console.log(`\tTest case ${testCase.testIndex + 1}: Passed`);
-                tableCont[2] = 'Passed'
-                tableCont[4] = testCase.actual
             } else {
                 console.log(
                     `\tTest case ${testCase.testIndex + 1}: Failed (Expected: ${JSON.stringify(
                         testCase.expected,
                     )}, Got: ${JSON.stringify(testCase.actual)})`,
                 );
-                tableCont[2] = 'Failed'
-                tableCont[4] = testCase.actual
                 let str = util.inspect(testCase.input, {
                     depth: 2,
                     maxArrayLength: 7,
@@ -279,6 +267,27 @@ function runQuestions() {
                 });
                 console.log('\tInputs:\n\t\t' + str.split('\n').join('\n\t\t'));
                 console.log();
+            }
+        });
+    });
+
+    allResults.forEach(({ question, results }) => {
+        cont += `<h1>Question ${question.slice(1)}</h1>`
+        cont += htmlTableStart
+        results.forEach((testCase) => {
+            cont += '<tr><td>'
+            tableCont[0] = testCase.testIndex + 1
+            tableCont[1] = testCase.input
+            tableCont[3] = testCase.expected
+            if (testCase.error) {
+                tableCont[2] = 'Error'
+                tableCont[4] = 'ERROR: ' + testCase.error.message
+            } else if (testCase.passed) {
+                tableCont[2] = 'Passed'
+                tableCont[4] = testCase.actual
+            } else {
+                tableCont[2] = 'Failed'
+                tableCont[4] = testCase.actual
             }
             cont += tableCont.join("</td><td>");
             cont += '</tr>'

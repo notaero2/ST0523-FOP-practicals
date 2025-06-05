@@ -221,6 +221,7 @@ function runQuestions() {
     // log results
     let cont = ''
     let tableCont = [1, ['input'], 'Error', 'expected', 'actual'] //initialise table content(testcase no, input, result, expected, actual)
+    let rowClass = ''
     const payload = {
         student_id: studentId,
         class: className,
@@ -275,7 +276,6 @@ function runQuestions() {
         cont += `<h1>Question ${question.slice(1)}</h1>`
         cont += htmlTableStart
         results.forEach((testCase) => {
-            cont += '<tr><td>'
             tableCont[0] = testCase.testIndex + 1
             tableCont[1] = testCase.input
             tableCont[3] = testCase.expected
@@ -289,6 +289,8 @@ function runQuestions() {
                 tableCont[2] = 'Failed'
                 tableCont[4] = testCase.actual
             }
+            rowClass = tableCont[2] + 'TC'
+            cont += `<tr class='${rowClass}'><td>`
             cont += tableCont.join("</td><td>");
             cont += '</tr>'
         });

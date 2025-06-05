@@ -13,11 +13,11 @@ td {
     border-collapse: collapse;
 }
 .ErrorTC {
-
+    color: maroon;
 }
 .PassedTC {
-    
+    color: green;
 }
 .FailedTC {
-    
+    color: red;
 }

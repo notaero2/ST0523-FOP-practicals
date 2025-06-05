@@ -1,10 +1,14 @@
 table {
     border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
 }
 th {
     border: 1px solid;
+    border-collapse: collapse;
     font-weight: bold;
 }
 td {
     border: 1px solid;
+    border-collapse: collapse;
 }

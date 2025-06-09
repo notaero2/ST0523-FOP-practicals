@@ -35,6 +35,11 @@ td {
 }
 .tcNo {
     width: 9ch;
+    min-width: 9ch;
+    height: 1ex;
+}
+.tcNoHead {
+    height: 1ex;
 }
 .ErrorTC {
     color: maroon;

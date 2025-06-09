@@ -22,7 +22,7 @@ function writeToFile(scr) {
 // constants for html file content
 const htmlDefStart = '<!DOCTYPE html><html><head><link rel="stylesheet" href="styles.css"></head><body>'
 const htmlDefEnd = '</body></html>'
-const htmlTableStart = '<table><tr><th>Testcase #</th><th>Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>'
+const htmlTableStart = "<table><tr><th class='tcNo'>Testcase #</th><th>Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>"
 
 const { studentId, className } = package;
 if (
@@ -290,7 +290,7 @@ function runQuestions() {
                 tableCont[4] = testCase.actual
             }
             rowClass = tableCont[2] + 'TC'
-            cont += `<tr class='${rowClass}'><td class='tcNo'>`
+            cont += `<tr class='${rowClass}'><td>`
             cont += tableCont.join("</td><td>");
             cont += '</tr>'
         });

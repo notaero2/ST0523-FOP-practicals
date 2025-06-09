@@ -1,3 +1,8 @@
+h1 {
+    color: blue;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+}
 table {
     border: 1px solid;
     border-color: black;
@@ -8,12 +13,17 @@ th {
     border: 1px solid;
     border-color: black;
     border-collapse: collapse;
+    padding: 2px 4px;
+    color: black;
+    font-family: Helvetica, sans-serif;
     font-weight: bold;
 }
 td {
     border: 1px solid;
     border-color: black;
     border-collapse: collapse;
+    padding: 2px 4px;
+    font-family: Georgia, serif;
 }
 .ErrorTC {
     color: maroon;

@@ -33,6 +33,9 @@ td {
     font-family: Georgia, serif;
     font-size: 15px;
 }
+.tcNo {
+    width: 9ch;
+}
 .ErrorTC {
     color: maroon;
 }

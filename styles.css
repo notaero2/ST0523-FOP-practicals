@@ -33,12 +33,9 @@ td {
     font-family: Georgia, serif;
     font-size: 15px;
 }
-.tcNo {
-    width: 9ch;
-    min-width: 9ch;
-    height: 1ex;
-}
-.tcNoHead {
+.tcNo  {
+    width: 9.3ch;
+    min-width: 9.3ch;
     height: 1ex;
 }
 .ErrorTC {

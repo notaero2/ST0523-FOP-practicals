@@ -23,6 +23,7 @@ th {
     color: black;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
+    font-size: 15px;
 }
 td {
     border: 1px solid;
@@ -30,6 +31,7 @@ td {
     border-collapse: collapse;
     padding: 2px 4px;
     font-family: Georgia, serif;
+    font-size: 15px;
 }
 .ErrorTC {
     color: maroon;

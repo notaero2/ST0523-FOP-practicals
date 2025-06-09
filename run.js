@@ -290,7 +290,7 @@ function runQuestions() {
                 tableCont[4] = testCase.actual
             }
             rowClass = tableCont[2] + 'TC'
-            cont += `<tr class='${rowClass}'><td>`
+            cont += `<tr class='${rowClass}'><td class='tcNo'>`
             cont += tableCont.join("</td><td>");
             cont += '</tr>'
         });

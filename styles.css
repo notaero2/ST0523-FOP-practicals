@@ -1,5 +1,5 @@
 body {
-    background-color: #778899;
+    background-color: black;
 }
 h1 {
     color: blue;
@@ -8,7 +8,7 @@ h1 {
 }
 table {
     border: 1px solid;
-    border-color: black;
+    border-color: white;
     border-collapse: collapse;
     width: 90%;
     margin-left: auto;
@@ -17,17 +17,17 @@ table {
 }
 th {
     border: 1px solid;
-    border-color: black;
+    border-color: white;
     border-collapse: collapse;
     padding: 2px 4px;
-    color: black;
+    color: white;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
     font-size: 15px;
 }
 td {
     border: 1px solid;
-    border-color: black;
+    border-color: white;
     border-collapse: collapse;
     padding: 2px 4px;
     font-family: Georgia, serif;
@@ -42,7 +42,7 @@ td {
     color: maroon;
 }
 .PassedTC {
-    color: green;
+    color: lime;
 }
 .FailedTC {
     color: red;

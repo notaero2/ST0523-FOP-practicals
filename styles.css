@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: beige;
 }
 h1 {
     color: blue;
@@ -17,17 +17,17 @@ table {
 }
 th {
     border: 1px solid;
-    border-color: white;
+    border-color: black;
     border-collapse: collapse;
     padding: 2px 4px;
-    color: white;
+    color: black;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
     font-size: 15px;
 }
 td {
     border: 1px solid;
-    border-color: white;
+    border-color: black;
     border-collapse: collapse;
     padding: 2px 4px;
     font-family: Georgia, serif;
@@ -42,7 +42,7 @@ td {
     color: maroon;
 }
 .PassedTC {
-    color: lime;
+    color: green;
 }
 .FailedTC {
     color: red;

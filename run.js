@@ -22,7 +22,9 @@ function writeToFile(scr) {
 // constants for html file content
 const htmlDefStart = '<!DOCTYPE html><html><head><link rel="stylesheet" href="styles.css"></head><body>'
 const htmlDefEnd = '</body></html>'
-const htmlTableStart = "<table><tr><th class='tcNo'>Testcase #</th><th>Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>"
+function htmlTableStart(inputCount) {
+    return `<table><tr><th class='tcNo'>Testcase #</th><th colspan="${inputCount}">Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>`
+}
 
 const { studentId, className } = package;
 if (
@@ -272,9 +274,23 @@ function runQuestions() {
         });
     });
 
+    //for seperating problem set name and number
+    let nameID = -1
+    let nameIDNo = true
+    while (nameIDNo){
+        nameID++
+        nameIDNo = false
+        for (let k = 0; k < 10; k++) {
+            if (problemSet[nameID] == k) {
+                nameIDNo = true
+            }
+        }
+    }
+
+    cont += `<h1>Problem Set ${problemSet.slice(0, nameID)}: ${problemSet.slice(nameID)}</h1>`
     allResults.forEach(({ question, results }) => {
-        cont += `<h1>Question ${question.slice(1)}</h1>`
-        cont += htmlTableStart
+        cont += `<h2>Question ${question.slice(1)}</h2>`
+        cont += htmlTableStart(1)
         results.forEach((testCase) => {
             tableCont[0] = testCase.testIndex + 1
             tableCont[1] = testCase.input

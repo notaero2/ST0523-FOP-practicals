@@ -272,8 +272,9 @@ function runQuestions() {
         });
     });
 
+    cont += `<h1>${problemSet}</h1>`
     allResults.forEach(({ question, results }) => {
-        cont += `<h1>Question ${question.slice(1)}</h1>`
+        cont += `<h2>Question ${question.slice(1)}</h2>`
         cont += htmlTableStart
         results.forEach((testCase) => {
             tableCont[0] = testCase.testIndex + 1

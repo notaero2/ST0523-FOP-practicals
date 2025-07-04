@@ -22,8 +22,8 @@ function writeToFile(scr) {
 // constants for html file content
 const htmlDefStart = '<!DOCTYPE html><html><head><link rel="stylesheet" href="styles.css"></head><body>'
 const htmlDefEnd = '</body></html>'
-function htmlTableStart(inputCount) {
-    return `<table><tr><th class='tcNo'>Testcase #</th><th colspan="${inputCount}">Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>`
+function htmlTableStart(paramCount) {
+    return `<table><tr><th class='tcNo'>Testcase #</th><th colspan="${paramCount}">Input</th><th>Result</th><th>Expected</th><th>Actual</th></tr>`
 }
 
 const { studentId, className } = package;
@@ -220,10 +220,13 @@ function runQuestions() {
         return { question, results };
     });
 
-    // log results
+    // initialise for html generation
     let cont = ''
-    let tableCont = [1, ['input'], 'Error', 'expected', 'actual'] //initialise table content(testcase no, input, result, expected, actual)
+    let params = ['input'] //initialise input value
+    let tableCont = [1, 'input', 'Error', 'expected', 'actual'] //initialise table content(testcase no, input, result, expected, actual)
     let rowClass = ''
+
+    // log results
     const payload = {
         student_id: studentId,
         class: className,
@@ -290,10 +293,10 @@ function runQuestions() {
     cont += `<h1>Problem Set ${problemSet.slice(0, nameID)}: ${problemSet.slice(nameID)}</h1>`
     allResults.forEach(({ question, results }) => {
         cont += `<h2>Question ${question.slice(1)}</h2>`
-        cont += htmlTableStart(1)
+        cont += htmlTableStart(results[0].input.length)
         results.forEach((testCase) => {
             tableCont[0] = testCase.testIndex + 1
-            tableCont[1] = testCase.input
+            params = testCase.input
             tableCont[3] = testCase.expected
             if (testCase.error) {
                 tableCont[2] = 'Error'
@@ -305,6 +308,7 @@ function runQuestions() {
                 tableCont[2] = 'Failed'
                 tableCont[4] = testCase.actual
             }
+            tableCont[1] = params.join("</td><td>");
             rowClass = tableCont[2] + 'TC'
             cont += `<tr class='${rowClass}'><td>`
             cont += tableCont.join("</td><td>");

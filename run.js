@@ -328,7 +328,7 @@ function runQuestions() {
             tableHtml += '</tr>'
         });
         tableHtml += '</table>'
-        counterHtml = `<h3>Testcases (${passCount+failCount+errorCount})</h3><p class='passCounter'>${passCount} passed</p><p class='failCounter'>${failCount} failed</p><p class='errCounter'>${errorCount} errors</p>`
+        counterHtml = `<div class='counter'><div class='counterTitle'>Testcases (${passCount+failCount+errorCount})</div><div class='passCounter'>${passCount} passed</div><div class='failCounter'>${failCount} failed</div><div class='errCounter'>${errorCount} errors</div></div>`
         cont += counterHtml
         cont += tableHtml
     });

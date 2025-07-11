@@ -14,9 +14,17 @@ h2 {
     font-size: 24px;
     text-align: center;
 }
-h3 {
+.counter {
+    font-family: Courier, monospace;
+    font-size: 16px;
+    background-color: white;
+    padding: 14px 18px;
+    margin: 14px 18px;
+}
+.counterTitle {
     color: black;
     font-weight: bold;
+    font-size: 20px;
 }
 .errCounter {
     color: maroon;

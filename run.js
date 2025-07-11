@@ -289,11 +289,21 @@ function runQuestions() {
             }
         }
     }
+    
+    //initialise for testcase counter and table html
+    let passCount = 0
+    let failCount = 0
+    let errorCount = 0
+    let counterHtml = ''
+    let tableHtml = ''
 
     cont += `<h1>Problem Set ${problemSet.slice(0, nameID)}: ${problemSet.slice(nameID)}</h1>`
     allResults.forEach(({ question, results }) => {
+        passCount = 0
+        failCount = 0
+        errorCount = 0
         cont += `<h2>Question ${question.slice(1)}</h2>`
-        cont += htmlTableStart(results[0].input.length)
+        tableHtml = htmlTableStart(results[0].input.length)
         results.forEach((testCase) => {
             tableCont[0] = testCase.testIndex + 1
             params = testCase.input
@@ -301,20 +311,26 @@ function runQuestions() {
             if (testCase.error) {
                 tableCont[2] = 'Error'
                 tableCont[4] = 'ERROR: ' + testCase.error.message
+                errorCount++
             } else if (testCase.passed) {
                 tableCont[2] = 'Passed'
                 tableCont[4] = testCase.actual
+                passCount++
             } else {
                 tableCont[2] = 'Failed'
                 tableCont[4] = testCase.actual
+                failCount++
             }
             tableCont[1] = params.join("</td><td>");
             rowClass = tableCont[2] + 'TC'
-            cont += `<tr class='${rowClass}'><td>`
-            cont += tableCont.join("</td><td>");
-            cont += '</tr>'
+            tableHtml += `<tr class='${rowClass}'><td>`
+            tableHtml += tableCont.join("</td><td>");
+            tableHtml += '</tr>'
         });
-        cont += '</table>'
+        tableHtml += '</table>'
+        counterHtml = `<div class='counter'><div class='counterTitle'>Testcases (${passCount+failCount+errorCount})</div><div class='passCounter'>${passCount} passed</div><div class='failCounter'>${failCount} failed</div><div class='errCounter'>${errorCount} errors</div></div>`
+        cont += counterHtml
+        cont += tableHtml
     });
 
     console.table(

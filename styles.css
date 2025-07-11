@@ -14,6 +14,19 @@ h2 {
     font-size: 24px;
     text-align: center;
 }
+h3 {
+    color: black;
+    font-weight: bold;
+}
+.errCounter {
+    color: maroon;
+}
+.passCounter {
+    color: green;
+}
+.failCounter {
+    color: red;
+}
 table {
     border: 1px solid;
     border-color: black;

@@ -183,7 +183,7 @@ function runTestCases(runCode, testcases, options) {
             const passed = compareResults(result, expected, options);
             return { testIndex, passed, input, expected, actual: result };
         } catch (error) {
-            return { testIndex, error: error };
+            return { testIndex, input, expected, error: error };
         }
     });
 }
@@ -321,16 +321,17 @@ function runQuestions() {
                 tableCont[4] = testCase.actual
                 failCount++
             }
-
+            
             for (let paramNo = 0; paramNo < params.length; paramNo++) {
                 if (typeof params[paramNo] == 'object' && params[paramNo] !== null) {
                     params[paramNo] = JSON.stringify(params[paramNo])
                 }
             }
-            if (typeof tableCont[3] == 'object' && tableCont[3] != null) {
+
+            if (typeof tableCont[3] == 'object' && tableCont[3] !== null) {
                 tableCont[3] = JSON.stringify(tableCont[3])
             }
-            if (typeof tableCont[4] == 'object' && tableCont[4] != null) {
+            if (typeof tableCont[4] == 'object' && tableCont[4] !== null) {
                 tableCont[4] = JSON.stringify(tableCont[4])
             }
 
@@ -341,7 +342,12 @@ function runQuestions() {
             tableHtml += '</tr>'
         });
         tableHtml += '</table>'
-        counterHtml = `<div class='counter'><div class='counterTitle'>Testcases (${passCount+failCount+errorCount})</div><div class='passCounter'>${passCount} passed</div><div class='failCounter'>${failCount} failed</div><div class='errCounter'>${errorCount} errors</div></div>`
+        counterHtml = `<div class='counter'><div class='counterTitle'>Testcases (${passCount+failCount+errorCount})</div><div class='passCounter'>${passCount} passed</div><div class='failCounter'>${failCount} failed</div><div class='errCounter'>${errorCount} error case`
+        if (errorCount == 1) {
+            counterHtml += '</div></div>'
+        } else {
+            counterHtml += 's</div></div>'
+        }
         cont += counterHtml
         cont += tableHtml
     });

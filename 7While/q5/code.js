@@ -21,7 +21,24 @@
  * @hint
  * This uses nested for-loop
  */
-function zoomOut(array, zoomLevel) {}
+function zoomOut(array, zoomLevel) {
+    let groups = []
+    let total = 0
+    let avgs = []
+    
+    for (let startIndex = 0; startIndex < array.length; startIndex += zoomLevel) {
+        groups.push(array.slice(startIndex, startIndex+zoomLevel))
+    }
+
+    for (let groupIndex = 0; groupIndex < groups.length; groupIndex++) {
+        total = 0
+        for (let i = 0; i < groups[groupIndex].length; i++) {
+            total += groups[groupIndex][i]
+        }
+        avgs.push(total/groups[groupIndex].length)
+    }
+    return avgs
+}
 
 // Your own test cases
 // e.g.;

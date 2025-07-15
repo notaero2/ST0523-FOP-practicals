@@ -31,7 +31,32 @@
  * getStudentIds(1) => [6,9,2] // Not Found!
  *
  */
-function findStudent(getStudentIds, targetStudentId) {}
+function findStudent(getStudentIds, targetStudentId) {
+    let page = []
+    let pageNo = -1
+    let found = false
+    while (!found) {
+        pageNo++
+
+        //function ver
+        page = getStudentIds(pageNo)
+        
+        //array ver
+        /*
+        page = getStudentIds.slice(pageNo*5, (pageNo+1)*5)
+        */
+
+        for (let i = 0; i < page.length; i++) {
+            if (page[i] == targetStudentId) {
+                found = true
+                return true
+            }
+        }
+        if (page.length < 5) {
+            return false
+        }
+    }
+}
 
 // Your own test cases
 // e.g.;

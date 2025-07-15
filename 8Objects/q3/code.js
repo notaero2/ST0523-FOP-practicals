@@ -12,7 +12,37 @@
  *      // returns:  { 'Alice': ['ST0523', 'ST0501'], 'Bob': ['ST0523'], 'John': ['ST0501', 'ST2413'], 'Charlie': ['ST0501', 'ST2413'] }
  *
  */
-function reverseMapping(modules, moduleToTutors) {}
+function reverseMapping(modules, moduleToTutors) {
+    let tutors = []
+    let tutorObj = {}
+    let repeated = false
+    for (let m = 0; m < modules.length; m++) {
+        for (let t = 0; t < moduleToTutors[modules[m]].length; t++) {
+            repeated = false
+            if (tutors.length > 0) {
+                for (let u = 0; u < tutors.length; u++) {
+                    if (moduleToTutors[modules[m]][t] == tutors[u]) {
+                        repeated = true
+                    }
+                }
+            }
+            if (!repeated) {
+                tutors.push(moduleToTutors[modules[m]][t])
+            }
+        }
+    }
+    for (let v = 0; v < tutors.length; v++) {
+        tutorObj[tutors[v]] = []
+        for (let n = 0; n < modules.length; n++) {
+            for (let w = 0; w < moduleToTutors[modules[n]].length; w++) {
+                if (moduleToTutors[modules[n]][w] == tutors[v]) {
+                    tutorObj[tutors[v]].push(modules[n])
+                }
+            }
+        }
+    }
+    return tutorObj
+}
 
 // Your own test cases
 // e.g.;

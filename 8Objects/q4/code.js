@@ -47,7 +47,46 @@
  * 2. To keep track of how many order a location has - e.g. locations['South']
  * 3. To keep track of how many order a (driver, location) pair has - e.g. combo['Alice']['South']
  */
-function deliveryAssignment(commands) {}
+function deliveryAssignment(commands) {
+    let drivers = {}
+    let locations = {'North': 0, 'South': 0, 'East': 0, 'West': 0}
+    let combo = {}
+    let query = []
+    let command = 'doSomething'
+    let driver = 'Nulla'
+    let direction = 'Centre'
+
+    let modifiedCommands = []
+    for (let c = 0; c < commands.length; c++) {
+        modifiedCommands.push(commands[c].split(' '))
+        if (modifiedCommands[c][0] == 'assign' || modifiedCommands[c][0] == 'queryDriver' || modifiedCommands[c][0] == 'query') {
+            drivers[modifiedCommands[c][1]] = 0
+            combo[modifiedCommands[c][1]] = {'North': 0, 'South': 0, 'East': 0, 'West': 0}
+        }
+    }
+
+    for (let m = 0; m < commands.length; m++) {
+        command = modifiedCommands[m][0]
+        if (command == 'assign') {
+            driver = modifiedCommands[m][1]
+            direction = modifiedCommands[m][2]
+            drivers[driver] += 1
+            locations[direction] += 1
+            combo[driver][direction] += 1
+        } else if (command == 'queryDriver') {
+            driver = modifiedCommands[m][1]
+            query.push(drivers[driver])
+        } else if (command == 'queryLocation') {
+            direction = modifiedCommands[m][1]
+            query.push(locations[direction])
+        } else if (command == 'query') {
+            driver = modifiedCommands[m][1]
+            direction = modifiedCommands[m][2]
+            query.push(combo[driver][direction])
+        }
+    }
+    return query
+}
 
 // Your own test cases
 // e.g.;

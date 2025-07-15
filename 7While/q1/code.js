@@ -26,7 +26,36 @@
  * Hint: Refer to the digitSum function in ../4Loops/q6/code.js
  */
 function digitsSumToTarget(n, k) {
-    
+    //variables from loops q5
+    let digitSum = 0
+    let digit = 0
+    let digitNo = 1
+    let intDivide = 1
+
+    let found = []
+    let num = 0
+    if (k == 0) {
+        return undefined
+    }
+    while (found.length < n) {
+        num++
+
+        //taken from loops q5
+        digitSum = 0
+        digit = 0
+        digitNo = 1
+        intDivide = num / 10**(digitNo-1)
+        while (intDivide >= 1) {
+            digit =  parseInt(intDivide) % 10
+            digitSum += digit
+            digitNo += 1
+            intDivide = num / 10**(digitNo-1)
+        }
+        if (digitSum == k) {
+            found.push(num)
+        }
+    }
+    return found
 }
 
 // Your own test cases

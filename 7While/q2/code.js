@@ -39,7 +39,28 @@
  *
  * final: [1,2,3,4,5,6]
  */
-function combineAndSort(sortedArray1, sortedArray2) {}
+function combineAndSort(sortedArray1, sortedArray2) {
+    let combinedArray = []
+    let index1 = 0
+    let index2 = 0
+    
+    while (index1 < sortedArray1.length || index2 < sortedArray2.length) {
+        if (index1 >= sortedArray1.length) {
+            combinedArray.push(sortedArray2[index2])
+            index2++
+        } else if (index2 >= sortedArray2.length) {
+            combinedArray.push(sortedArray1[index1])
+            index1++
+        } else if (sortedArray1[index1] <= sortedArray2[index2]) {
+            combinedArray.push(sortedArray1[index1])
+            index1++
+        } else {
+            combinedArray.push(sortedArray2[index2])
+            index2++
+        }
+    }
+    return combinedArray
+}
 
 // Your own test cases
 // e.g.;

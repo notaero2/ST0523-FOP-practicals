@@ -183,7 +183,7 @@ function runTestCases(runCode, testcases, options) {
             const passed = compareResults(result, expected, options);
             return { testIndex, passed, input, expected, actual: result };
         } catch (error) {
-            return { testIndex, error: error };
+            return { testIndex, input, expected, error: error };
         }
     });
 }
@@ -321,7 +321,7 @@ function runQuestions() {
                 tableCont[4] = testCase.actual
                 failCount++
             }
-
+            
             for (let paramNo = 0; paramNo < params.length; paramNo++) {
                 if (typeof params[paramNo] == 'object' && params[paramNo] !== null) {
                     params[paramNo] = JSON.stringify(params[paramNo])
@@ -341,7 +341,12 @@ function runQuestions() {
             tableHtml += '</tr>'
         });
         tableHtml += '</table>'
-        counterHtml = `<div class='counter'><div class='counterTitle'>Testcases (${passCount+failCount+errorCount})</div><div class='passCounter'>${passCount} passed</div><div class='failCounter'>${failCount} failed</div><div class='errCounter'>${errorCount} errors</div></div>`
+        counterHtml = `<div class='counter'><div class='counterTitle'>Testcases (${passCount+failCount+errorCount})</div><div class='passCounter'>${passCount} passed</div><div class='failCounter'>${failCount} failed</div><div class='errCounter'>${errorCount} error case`
+        if (errorCount == 1) {
+            counterHtml += '</div></div>'
+        } else {
+            counterHtml += 's</div></div>'
+        }
         cont += counterHtml
         cont += tableHtml
     });

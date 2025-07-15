@@ -327,7 +327,6 @@ function runQuestions() {
                     params[paramNo] = JSON.stringify(params[paramNo])
                 }
             }
-
             if (typeof tableCont[3] == 'object' && tableCont[3] !== null) {
                 tableCont[3] = JSON.stringify(tableCont[3])
             }

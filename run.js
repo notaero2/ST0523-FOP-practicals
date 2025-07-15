@@ -323,7 +323,7 @@ function runQuestions() {
             }
 
             for (let paramNo = 0; paramNo < params.length; paramNo++) {
-                if (typeof params[paramNo] == 'object' && params[paramNo] != null) {
+                if (typeof params[paramNo] == 'object' && params[paramNo] !== null) {
                     params[paramNo] = JSON.stringify(params[paramNo])
                 }
             }
@@ -333,7 +333,7 @@ function runQuestions() {
             if (typeof tableCont[4] == 'object' && tableCont[4] != null) {
                 tableCont[4] = JSON.stringify(tableCont[4])
             }
-            
+
             tableCont[1] = params.join("</td><td>");
             rowClass = tableCont[2] + 'TC'
             tableHtml += `<tr class='${rowClass}'><td>`

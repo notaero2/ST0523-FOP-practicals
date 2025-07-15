@@ -22,7 +22,11 @@
  * @hint
  * A helper function is given to round to the nearest grade.
  */
-function toGetTargetGPA(gpa, creditsFulfilled, totalCredits, targetGPA) {}
+function toGetTargetGPA(gpa, creditsFulfilled, totalCredits, targetGPA) {
+    let score = gpa * creditsFulfilled
+    let targetScore = targetGPA * totalCredits
+    return roundToNearestGrade((targetScore-score)/(totalCredits-creditsFulfilled))
+}
 
 function roundToNearestGrade(gradePoint) {
     return Math.ceil(gradePoint * 2) / 2;

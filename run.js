@@ -324,14 +324,14 @@ function runQuestions() {
             
             for (let paramNo = 0; paramNo < params.length; paramNo++) {
                 if (typeof params[paramNo] == 'object' && params[paramNo] !== null) {
-                    params[paramNo] = JSON.stringify(params[paramNo])
+                    params[paramNo] = JSON.stringify(params[paramNo], null, 1)
                 }
             }
             if (typeof tableCont[3] == 'object' && tableCont[3] !== null) {
-                tableCont[3] = JSON.stringify(tableCont[3])
+                tableCont[3] = JSON.stringify(tableCont[3], null, 1)
             }
             if (typeof tableCont[4] == 'object' && tableCont[4] !== null) {
-                tableCont[4] = JSON.stringify(tableCont[4])
+                tableCont[4] = JSON.stringify(tableCont[4], null, 1)
             }
 
             tableCont[1] = params.join("</td><td>");

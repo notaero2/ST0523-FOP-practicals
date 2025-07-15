@@ -18,7 +18,38 @@
  * checkArray([5, 4, 4, 3, 2]); // 'Non-ascending'
  * checkArray([1, 2, 4, 3, 5]); // 'Unsorted'
  */
-function checkArray(array) {}
+function checkArray(array) {
+    let arrayCheck = [true, true, true, true, true] //asc, desc, const, non-desc, non-asc
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] > array[i-1]) { //ascending between 2 adj numbers
+            arrayCheck[1] = false
+            arrayCheck[2] = false
+            arrayCheck[4] = false
+        }
+        if (array[i] < array[i-1]) { //descending between 2 adj numbers
+            arrayCheck[0] = false
+            arrayCheck[2] = false
+            arrayCheck[3] = false
+        }
+        if (array[i] == array[i-1]) { //const between 2 adj numbers
+            arrayCheck[0] = false
+            arrayCheck[1] = false
+        }
+    }
+    if (arrayCheck[0]) {
+        return 'Ascending'
+    } else if (arrayCheck[1]) {
+        return 'Descending'
+    } else if (arrayCheck[2]) {
+        return 'Constant'
+    } else if (arrayCheck[3]) {
+        return 'Non-descending'
+    } else if (arrayCheck[4]) {
+        return 'Non-ascending'
+    } else {
+        return 'Unsorted'
+    }
+}
 
 // Your own test cases
 // e.g.;

@@ -34,7 +34,18 @@
  *      rounded up = 7
  *      divide by 2 = 3.5
  */
-function toGetTargetGPA(moduleCredits, moduleGrades, totalCredits, targetGPA) {}
+function toGetTargetGPA(moduleCredits, moduleGrades, totalCredits, targetGPA) {
+    let gradeSum = 0
+    let creditsSum = 0
+    const targetScore = targetGPA*totalCredits
+    for (i = 0; i < moduleCredits.length; i++) {
+        creditsSum += moduleCredits[i]
+        gradeSum += moduleCredits[i] * moduleGrades[i]
+    }
+    const creditsLeft = totalCredits-creditsSum
+    const scoreLeft = targetScore-gradeSum
+    return (Math.ceil((scoreLeft/creditsLeft)*2)/2)
+}
 
 // Your own test cases
 // e.g.;

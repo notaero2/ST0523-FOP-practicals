@@ -23,7 +23,19 @@
  *
  *  Elements at position 1, 3, 5, 7, 9, and 11 matches its previous element
  */
-function adjacentMatchCount(strings) {}
+function adjacentMatchCount(strings) {
+    let matches = 0
+    let shifted = [strings[strings.length-1]]
+    for (let i = 0; i < strings.length-1; i++) {
+        shifted.push(strings[i])
+    }
+    for (let k = 0; k < strings.length; k++) {
+        if (strings[k] == shifted[k]) {
+            matches++
+        }
+    }
+    return matches
+}
 
 // Your own test cases
 // e.g.;

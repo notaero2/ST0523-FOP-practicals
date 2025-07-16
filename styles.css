@@ -59,7 +59,7 @@ td {
     border-color: black;
     border-collapse: collapse;
     padding: 2px 8px;
-    font-family: Georgia, serif;
+    font-family: Courier, monospace;
     font-size: 15px;
 }
 .tcNo {

@@ -324,17 +324,22 @@ function runQuestions() {
             
             for (let paramNo = 0; paramNo < params.length; paramNo++) {
                 if (typeof params[paramNo] == 'object' && params[paramNo] !== null) {
-                    params[paramNo] = JSON.stringify(params[paramNo], null, 1)
+                    params[paramNo] = util.inspect(params[paramNo], {depth: null, maxArrayLength: null})
                 }
+                params[paramNo] = "<code><pre>" + params[paramNo] + "</pre></code>"
             }
-            if (typeof tableCont[3] == 'object' && tableCont[3] !== null) {
-                tableCont[3] = JSON.stringify(tableCont[3], null, 1)
-            }
-            if (typeof tableCont[4] == 'object' && tableCont[4] !== null) {
-                tableCont[4] = JSON.stringify(tableCont[4], null, 1)
-            }
-
             tableCont[1] = params.join("</td><td>");
+
+            if (typeof tableCont[3] == 'object' && tableCont[3] !== null) {
+                tableCont[3] = util.inspect(tableCont[3], {depth: null, maxArrayLength: null})
+            }
+            tableCont[3] = "<code><pre>" + tableCont[3] + "</pre></code>"
+
+            if (typeof tableCont[4] == 'object' && tableCont[4] !== null) {
+                tableCont[4] = util.inspect(tableCont[4], {depth: null, maxArrayLength: null})
+            }
+            tableCont[4] = "<code><pre>" + tableCont[4] + "</pre></code>"
+
             rowClass = tableCont[2] + 'TC'
             tableHtml += `<tr class='${rowClass}'><td>`
             tableHtml += tableCont.join("</td><td>");
@@ -347,8 +352,8 @@ function runQuestions() {
         } else {
             counterHtml += 's</div></div>'
         }
-        cont += counterHtml
         cont += tableHtml
+        cont += counterHtml
     });
 
     console.table(

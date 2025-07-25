@@ -19,7 +19,7 @@ h2 {
     font-size: 16px;
     background-color: white;
     padding: 14px 18px;
-    margin: 14px 18px;
+    margin: 14px 18px 139px;
 }
 .counterTitle {
     color: black;
@@ -48,7 +48,7 @@ th {
     border: 1px solid;
     border-color: black;
     border-collapse: collapse;
-    padding: 2px 8px;
+    padding: 6px 8px;
     color: black;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
@@ -58,9 +58,12 @@ td {
     border: 1px solid;
     border-color: black;
     border-collapse: collapse;
-    padding: 2px 8px;
-    font-family: Courier, monospace;
+    padding: 6px 8px;
+    font-family: Georgia, serif;
     font-size: 15px;
+}
+code {
+    text-align: left;
 }
 .tcNo {
     width: 9.2ch;
